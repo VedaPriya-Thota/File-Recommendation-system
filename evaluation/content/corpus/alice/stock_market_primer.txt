@@ -1,0 +1,1 @@
+Stocks represent ownership in a company. Index funds spread risk across many shares, and dividends are paid from profits.

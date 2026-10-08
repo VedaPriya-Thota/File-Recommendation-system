@@ -1,0 +1,1 @@
+Restart the router, check the cable, and move closer to the access point. If the signal drops again update the firmware.

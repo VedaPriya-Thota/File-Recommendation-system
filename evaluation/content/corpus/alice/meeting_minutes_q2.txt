@@ -1,0 +1,1 @@
+Incident review. The autoscaling policy on the kubernetes cluster failed during the traffic spike. Action items cover alert thresholds and a blameless postmortem document.

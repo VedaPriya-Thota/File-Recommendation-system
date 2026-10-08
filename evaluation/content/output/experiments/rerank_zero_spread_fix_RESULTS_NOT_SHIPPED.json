@@ -1,0 +1,6162 @@
+{
+  "metadata": {
+    "corpus_files": {
+      "alice": 29,
+      "bob": 3
+    },
+    "embedding_provider": "spacy:en_core_web_md (sandbox fallback -- see module docstring)",
+    "evaluation": "phase11_real_content (SEPARATE from the Phase 7/8/9 regression benchmark)",
+    "ingestion": {
+      "alice": {
+        "deleted": 0,
+        "deletion_skipped": false,
+        "discovered": 29,
+        "duration_ms": 5712.9,
+        "empty": 0,
+        "failed": 0,
+        "indexed": 29,
+        "new": 29,
+        "semantic_failed": 0,
+        "unchanged": 0,
+        "unsupported": 0,
+        "updated": 0
+      },
+      "bob": {
+        "deleted": 0,
+        "deletion_skipped": false,
+        "discovered": 3,
+        "duration_ms": 331.5,
+        "empty": 0,
+        "failed": 0,
+        "indexed": 3,
+        "new": 3,
+        "semantic_failed": 0,
+        "unchanged": 0,
+        "unsupported": 0,
+        "updated": 0
+      }
+    },
+    "llm": "NullProvider (no LLM); llm_attempts counts stage attempts",
+    "provider_note": "a 'lexical_overlap_fallback' reranker is NOT a CrossEncoder and 'spacy:' embeddings are the sandbox fallback; results do not represent production-model quality",
+    "queries": 31,
+    "reranker_provider": "lexical_overlap_fallback (NOT a cross-encoder -- see reranker.py docstring)",
+    "schema_version": 1
+  },
+  "results": [
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "L_filename",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/quarterly_budget_review.txt"
+        ],
+        "retrieval_only": [
+          "alice/quarterly_budget_review.txt"
+        ],
+        "without_personalization": [
+          "alice/quarterly_budget_review.txt"
+        ],
+        "without_rerank": [
+          "alice/quarterly_budget_review.txt"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/quarterly_budget_review.txt"
+      ],
+      "expected_files": [
+        "alice/quarterly_budget_review.txt"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "quarterly",
+          "budget",
+          "review"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 1,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/quarterly_budget_review.txt"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "L1",
+      "query": "quarterly budget review",
+      "raw_semantic_top": [
+        [
+          "alice/quarterly_budget_review.txt",
+          0.7447
+        ],
+        [
+          "alice/tax_filing_checklist.pdf",
+          0.7094
+        ],
+        [
+          "alice/lease_agreement_summary.docx",
+          0.6687
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 1,
+      "returned_file_ids": [
+        "alice/quarterly_budget_review.txt"
+      ],
+      "returned_files": [
+        "alice/quarterly_budget_review.txt"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": 1,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [],
+        "metadata_search": [
+          [
+            "alice/quarterly_budget_review.txt",
+            1.0
+          ]
+        ],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 1,
+      "tool_counts": {
+        "bm25_search": 0,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search"
+      ],
+      "top_evidence_source": {
+        "alice/quarterly_budget_review.txt": "metadata_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "L_filename",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/employee_handbook.pdf"
+        ],
+        "retrieval_only": [
+          "alice/employee_handbook.pdf"
+        ],
+        "without_personalization": [
+          "alice/employee_handbook.pdf"
+        ],
+        "without_rerank": [
+          "alice/employee_handbook.pdf"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/employee_handbook.pdf"
+      ],
+      "expected_files": [
+        "alice/employee_handbook.pdf"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.8,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "employee",
+          "handbook"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 1,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/employee_handbook.pdf"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "L2",
+      "query": "employee handbook",
+      "raw_semantic_top": [
+        [
+          "alice/quarterly_budget_review.txt",
+          0.6139
+        ],
+        [
+          "alice/employee_handbook.pdf",
+          0.6012
+        ],
+        [
+          "alice/tax_filing_checklist.pdf",
+          0.5959
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 1,
+      "returned_file_ids": [
+        "alice/employee_handbook.pdf"
+      ],
+      "returned_files": [
+        "alice/employee_handbook.pdf"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": 1,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [],
+        "metadata_search": [
+          [
+            "alice/employee_handbook.pdf",
+            1.0
+          ]
+        ],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 1,
+      "tool_counts": {
+        "bm25_search": 0,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search"
+      ],
+      "top_evidence_source": {
+        "alice/employee_handbook.pdf": "metadata_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "L_filename",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/server_migration_plan.md",
+          "alice/piano_practice_plan.md",
+          "alice/plant_biology_primer.md"
+        ],
+        "retrieval_only": [
+          "alice/server_migration_plan.md",
+          "alice/piano_practice_plan.md",
+          "alice/plant_biology_primer.md"
+        ],
+        "without_personalization": [
+          "alice/server_migration_plan.md",
+          "alice/piano_practice_plan.md",
+          "alice/plant_biology_primer.md"
+        ],
+        "without_rerank": [
+          "alice/server_migration_plan.md",
+          "alice/piano_practice_plan.md",
+          "alice/plant_biology_primer.md"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/server_migration_plan.md"
+      ],
+      "expected_files": [
+        "alice/server_migration_plan.md"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "server",
+          "migration",
+          "plan"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 1,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/piano_practice_plan.md",
+        "alice/plant_biology_primer.md",
+        "alice/server_migration_plan.md"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "L3",
+      "query": "server migration plan",
+      "raw_semantic_top": [
+        [
+          "alice/server_migration_plan.md",
+          0.6724
+        ],
+        [
+          "alice/wifi_troubleshooting.txt",
+          0.5978
+        ],
+        [
+          "alice/employee_handbook.pdf",
+          0.5777
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 1,
+      "returned_file_ids": [
+        "alice/server_migration_plan.md",
+        "alice/piano_practice_plan.md",
+        "alice/plant_biology_primer.md"
+      ],
+      "returned_files": [
+        "alice/server_migration_plan.md",
+        "alice/piano_practice_plan.md",
+        "alice/plant_biology_primer.md"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": 1,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [],
+        "metadata_search": [
+          [
+            "alice/server_migration_plan.md",
+            1.0
+          ],
+          [
+            "alice/piano_practice_plan.md",
+            0.333
+          ],
+          [
+            "alice/plant_biology_primer.md",
+            0.333
+          ]
+        ],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 1,
+      "tool_counts": {
+        "bm25_search": 0,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search"
+      ],
+      "top_evidence_source": {
+        "alice/piano_practice_plan.md": "metadata_search",
+        "alice/plant_biology_primer.md": "metadata_search",
+        "alice/server_migration_plan.md": "metadata_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "L_filename",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/chess_openings.md",
+          "alice/book_club_notes.md",
+          "alice/embedding_primer.md",
+          "alice/garden_journal.md",
+          "alice/piano_practice_plan.md"
+        ],
+        "retrieval_only": [
+          "alice/chess_openings.md",
+          "alice/book_club_notes.md",
+          "alice/embedding_primer.md",
+          "alice/garden_journal.md",
+          "alice/piano_practice_plan.md"
+        ],
+        "without_personalization": [
+          "alice/chess_openings.md",
+          "alice/book_club_notes.md",
+          "alice/embedding_primer.md",
+          "alice/garden_journal.md",
+          "alice/piano_practice_plan.md"
+        ],
+        "without_rerank": [
+          "alice/chess_openings.md",
+          "alice/book_club_notes.md",
+          "alice/embedding_primer.md",
+          "alice/garden_journal.md",
+          "alice/piano_practice_plan.md"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/chess_openings.md"
+      ],
+      "expected_files": [
+        "alice/chess_openings.md"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "chess",
+          "openings",
+          "md"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 1,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/book_club_notes.md",
+        "alice/chess_openings.md",
+        "alice/embedding_primer.md",
+        "alice/garden_journal.md",
+        "alice/piano_practice_plan.md",
+        "alice/plant_biology_primer.md",
+        "alice/recipe_pasta.md",
+        "alice/server_migration_plan.md"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "L4",
+      "query": "chess_openings.md",
+      "raw_semantic_top": [
+        [
+          "alice/wifi_troubleshooting.txt",
+          0.0
+        ],
+        [
+          "alice/vaccination_records.txt",
+          0.0
+        ],
+        [
+          "alice/thai_curry_guide.txt",
+          0.0
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 1,
+      "returned_file_ids": [
+        "alice/chess_openings.md",
+        "alice/book_club_notes.md",
+        "alice/embedding_primer.md",
+        "alice/garden_journal.md",
+        "alice/piano_practice_plan.md",
+        "alice/plant_biology_primer.md",
+        "alice/recipe_pasta.md",
+        "alice/server_migration_plan.md"
+      ],
+      "returned_files": [
+        "alice/chess_openings.md",
+        "alice/book_club_notes.md",
+        "alice/embedding_primer.md",
+        "alice/garden_journal.md",
+        "alice/piano_practice_plan.md",
+        "alice/plant_biology_primer.md",
+        "alice/recipe_pasta.md",
+        "alice/server_migration_plan.md"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": 1,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [],
+        "metadata_search": [
+          [
+            "alice/chess_openings.md",
+            1.0
+          ],
+          [
+            "alice/book_club_notes.md",
+            0.333
+          ],
+          [
+            "alice/embedding_primer.md",
+            0.333
+          ],
+          [
+            "alice/garden_journal.md",
+            0.333
+          ],
+          [
+            "alice/piano_practice_plan.md",
+            0.333
+          ]
+        ],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 1,
+      "tool_counts": {
+        "bm25_search": 0,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search"
+      ],
+      "top_evidence_source": {
+        "alice/book_club_notes.md": "metadata_search",
+        "alice/chess_openings.md": "metadata_search",
+        "alice/embedding_primer.md": "metadata_search",
+        "alice/garden_journal.md": "metadata_search",
+        "alice/piano_practice_plan.md": "metadata_search",
+        "alice/plant_biology_primer.md": "metadata_search",
+        "alice/recipe_pasta.md": "metadata_search",
+        "alice/server_migration_plan.md": "metadata_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "C_content",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/kitchen_notes.txt"
+        ],
+        "retrieval_only": [
+          "alice/kitchen_notes.txt"
+        ],
+        "without_personalization": [
+          "alice/kitchen_notes.txt"
+        ],
+        "without_rerank": [
+          "alice/kitchen_notes.txt"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/kitchen_notes.txt"
+      ],
+      "expected_files": [
+        "alice/kitchen_notes.txt"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "sourdough",
+          "levain",
+          "hydration"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 2,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/kitchen_notes.txt"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "C1",
+      "query": "sourdough levain hydration",
+      "raw_semantic_top": [
+        [
+          "alice/recipe_pasta.md",
+          0.5941
+        ],
+        [
+          "alice/thai_curry_guide.txt",
+          0.5022
+        ],
+        [
+          "alice/kitchen_notes.txt",
+          0.4858
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 2,
+      "returned_file_ids": [
+        "alice/kitchen_notes.txt"
+      ],
+      "returned_files": [
+        "alice/kitchen_notes.txt"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": 1,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [
+          [
+            "alice/kitchen_notes.txt",
+            1.0
+          ]
+        ],
+        "hybrid_search": [],
+        "metadata_search": [],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 2,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search"
+      ],
+      "top_evidence_source": {
+        "alice/kitchen_notes.txt": "bm25_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "C_content",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/field_report_2023.docx"
+        ],
+        "retrieval_only": [
+          "alice/field_report_2023.docx"
+        ],
+        "without_personalization": [
+          "alice/field_report_2023.docx"
+        ],
+        "without_rerank": [
+          "alice/field_report_2023.docx"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/field_report_2023.docx"
+      ],
+      "expected_files": [
+        "alice/field_report_2023.docx"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "glacier",
+          "moraine",
+          "sediment",
+          "samples"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 2,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/field_report_2023.docx"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "C2",
+      "query": "glacier moraine sediment samples",
+      "raw_semantic_top": [
+        [
+          "alice/field_report_2023.docx",
+          0.6093
+        ],
+        [
+          "alice/plant_biology_primer.md",
+          0.5501
+        ],
+        [
+          "alice/erosion_survey.txt",
+          0.3974
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 2,
+      "returned_file_ids": [
+        "alice/field_report_2023.docx"
+      ],
+      "returned_files": [
+        "alice/field_report_2023.docx"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": 1,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [
+          [
+            "alice/field_report_2023.docx",
+            1.0
+          ]
+        ],
+        "hybrid_search": [],
+        "metadata_search": [],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 2,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search"
+      ],
+      "top_evidence_source": {
+        "alice/field_report_2023.docx": "bm25_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "C_content",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/meeting_minutes_q2.txt"
+        ],
+        "retrieval_only": [
+          "alice/meeting_minutes_q2.txt"
+        ],
+        "without_personalization": [
+          "alice/meeting_minutes_q2.txt"
+        ],
+        "without_rerank": [
+          "alice/meeting_minutes_q2.txt"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/meeting_minutes_q2.txt"
+      ],
+      "expected_files": [
+        "alice/meeting_minutes_q2.txt"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "kubernetes",
+          "autoscaling",
+          "postmortem"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 2,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/meeting_minutes_q2.txt"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "C3",
+      "query": "kubernetes autoscaling postmortem",
+      "raw_semantic_top": [
+        [
+          "alice/plant_biology_primer.md",
+          0.1153
+        ],
+        [
+          "alice/field_report_2023.docx",
+          0.1018
+        ],
+        [
+          "alice/meeting_minutes_q2.txt",
+          0.0978
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 2,
+      "returned_file_ids": [
+        "alice/meeting_minutes_q2.txt"
+      ],
+      "returned_files": [
+        "alice/meeting_minutes_q2.txt"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": 1,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [
+          [
+            "alice/meeting_minutes_q2.txt",
+            1.0
+          ]
+        ],
+        "hybrid_search": [],
+        "metadata_search": [],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 2,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search"
+      ],
+      "top_evidence_source": {
+        "alice/meeting_minutes_q2.txt": "bm25_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "C_content",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/vaccination_records.txt"
+        ],
+        "retrieval_only": [
+          "alice/vaccination_records.txt"
+        ],
+        "without_personalization": [
+          "alice/vaccination_records.txt"
+        ],
+        "without_rerank": [
+          "alice/vaccination_records.txt"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/vaccination_records.txt"
+      ],
+      "expected_files": [
+        "alice/vaccination_records.txt"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "tetanus",
+          "booster",
+          "flu",
+          "shot"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 2,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/vaccination_records.txt"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "C4",
+      "query": "tetanus booster flu shot",
+      "raw_semantic_top": [
+        [
+          "alice/vaccination_records.txt",
+          0.6421
+        ],
+        [
+          "alice/garden_journal.md",
+          0.4903
+        ],
+        [
+          "alice/erosion_survey.txt",
+          0.4807
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 2,
+      "returned_file_ids": [
+        "alice/vaccination_records.txt"
+      ],
+      "returned_files": [
+        "alice/vaccination_records.txt"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": 1,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [
+          [
+            "alice/vaccination_records.txt",
+            1.0
+          ]
+        ],
+        "hybrid_search": [],
+        "metadata_search": [],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 2,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search"
+      ],
+      "top_evidence_source": {
+        "alice/vaccination_records.txt": "bm25_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": "semantic_search",
+        "verdict": "retrieval_ordering"
+      },
+      "category": "S_semantic",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/thai_curry_guide.txt",
+          "alice/garden_journal.md",
+          "alice/recipe_pasta.md",
+          "alice/kitchen_notes.txt",
+          "alice/lisbon_dining_guide.pdf"
+        ],
+        "retrieval_only": [
+          "alice/thai_curry_guide.txt",
+          "alice/garden_journal.md",
+          "alice/recipe_pasta.md",
+          "alice/kitchen_notes.txt",
+          "alice/lisbon_dining_guide.pdf"
+        ],
+        "without_personalization": [
+          "alice/thai_curry_guide.txt",
+          "alice/garden_journal.md",
+          "alice/recipe_pasta.md",
+          "alice/kitchen_notes.txt",
+          "alice/lisbon_dining_guide.pdf"
+        ],
+        "without_rerank": [
+          "alice/thai_curry_guide.txt",
+          "alice/garden_journal.md",
+          "alice/recipe_pasta.md",
+          "alice/kitchen_notes.txt",
+          "alice/lisbon_dining_guide.pdf"
+        ]
+      },
+      "decision_basis": "personalization_resolved",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": false,
+      "expect_semantic": true,
+      "expected_file_ids": [
+        "alice/garden_journal.md"
+      ],
+      "expected_files": [
+        "alice/garden_journal.md"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 2,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "growing",
+          "vegetables",
+          "outdoors"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 0.0,
+      "iterations": 6,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 0.6309,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/astronomy_observing_guide.txt",
+        "alice/chess_openings.md",
+        "alice/garden_journal.md",
+        "alice/heart_health_leaflet.pdf",
+        "alice/kitchen_notes.txt",
+        "alice/lisbon_dining_guide.pdf",
+        "alice/marathon_training_schedule.docx",
+        "alice/plant_biology_primer.md",
+        "alice/recipe_pasta.md",
+        "alice/thai_curry_guide.txt"
+      ],
+      "pool_ranking_highly_relevant_at_1": 0.0,
+      "pool_ranking_reciprocal_rank": 0.5,
+      "precision_at_1": 0.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "S1",
+      "query": "growing vegetables outdoors",
+      "raw_semantic_top": [
+        [
+          "alice/thai_curry_guide.txt",
+          0.6582
+        ],
+        [
+          "alice/garden_journal.md",
+          0.6541
+        ],
+        [
+          "alice/recipe_pasta.md",
+          0.635
+        ]
+      ],
+      "reason": "Retrieval evidence is flat across 9 candidates; personalization (get_user_activity) separates file 332 by an affinity margin of 0.45 (>= 0.25). Not counted as retrieval dominance.",
+      "recall_at_1": 0.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 0.5,
+      "rerank_raw_scores": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rerank_zero_spread": true,
+      "retrieval_actions": 4,
+      "returned_file_ids": [
+        "alice/thai_curry_guide.txt",
+        "alice/garden_journal.md",
+        "alice/recipe_pasta.md",
+        "alice/kitchen_notes.txt",
+        "alice/lisbon_dining_guide.pdf",
+        "alice/heart_health_leaflet.pdf",
+        "alice/plant_biology_primer.md",
+        "alice/astronomy_observing_guide.txt",
+        "alice/chess_openings.md",
+        "alice/marathon_training_schedule.docx"
+      ],
+      "returned_files": [
+        "alice/thai_curry_guide.txt",
+        "alice/garden_journal.md",
+        "alice/recipe_pasta.md",
+        "alice/kitchen_notes.txt",
+        "alice/lisbon_dining_guide.pdf",
+        "alice/heart_health_leaflet.pdf",
+        "alice/plant_biology_primer.md",
+        "alice/astronomy_observing_guide.txt",
+        "alice/chess_openings.md",
+        "alice/marathon_training_schedule.docx"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": 2,
+        "metadata_search": null,
+        "rerank_candidates": 3,
+        "semantic_search": 2
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [
+          [
+            "alice/thai_curry_guide.txt",
+            0.016
+          ],
+          [
+            "alice/garden_journal.md",
+            0.016
+          ],
+          [
+            "alice/recipe_pasta.md",
+            0.016
+          ],
+          [
+            "alice/lisbon_dining_guide.pdf",
+            0.016
+          ],
+          [
+            "alice/heart_health_leaflet.pdf",
+            0.015
+          ]
+        ],
+        "metadata_search": [],
+        "rerank_candidates": [
+          [
+            "alice/astronomy_observing_guide.txt",
+            0.0
+          ],
+          [
+            "alice/chess_openings.md",
+            0.0
+          ],
+          [
+            "alice/garden_journal.md",
+            0.0
+          ],
+          [
+            "alice/heart_health_leaflet.pdf",
+            0.0
+          ],
+          [
+            "alice/kitchen_notes.txt",
+            0.0
+          ]
+        ],
+        "semantic_search": [
+          [
+            "alice/thai_curry_guide.txt",
+            1.0
+          ],
+          [
+            "alice/garden_journal.md",
+            0.994
+          ],
+          [
+            "alice/recipe_pasta.md",
+            0.965
+          ],
+          [
+            "alice/lisbon_dining_guide.pdf",
+            0.88
+          ],
+          [
+            "alice/heart_health_leaflet.pdf",
+            0.865
+          ]
+        ]
+      },
+      "status": "finish",
+      "success": false,
+      "tool_calls": 6,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 1,
+        "hybrid_search": 1,
+        "metadata_search": 1,
+        "rerank_candidates": 1,
+        "semantic_search": 1
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search",
+        "semantic_search",
+        "hybrid_search",
+        "rerank_candidates",
+        "get_user_activity"
+      ],
+      "top_evidence_source": {
+        "alice/astronomy_observing_guide.txt": "semantic_search",
+        "alice/chess_openings.md": "semantic_search",
+        "alice/garden_journal.md": "semantic_search",
+        "alice/heart_health_leaflet.pdf": "semantic_search",
+        "alice/kitchen_notes.txt": "semantic_search",
+        "alice/lisbon_dining_guide.pdf": "semantic_search",
+        "alice/marathon_training_schedule.docx": "semantic_search",
+        "alice/plant_biology_primer.md": "semantic_search",
+        "alice/recipe_pasta.md": "semantic_search",
+        "alice/thai_curry_guide.txt": "semantic_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": "semantic_search",
+        "verdict": "retrieval_ordering"
+      },
+      "category": "S_semantic",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/hiking_trip_itinerary.txt",
+          "alice/vaccination_records.txt",
+          "alice/meeting_minutes_q2.txt",
+          "alice/wifi_troubleshooting.txt",
+          "alice/solar_install_quote.txt"
+        ],
+        "retrieval_only": [
+          "alice/hiking_trip_itinerary.txt",
+          "alice/meeting_minutes_q2.txt",
+          "alice/wifi_troubleshooting.txt",
+          "alice/vaccination_records.txt",
+          "alice/solar_install_quote.txt"
+        ],
+        "without_personalization": [
+          "alice/hiking_trip_itinerary.txt",
+          "alice/vaccination_records.txt",
+          "alice/meeting_minutes_q2.txt",
+          "alice/wifi_troubleshooting.txt",
+          "alice/solar_install_quote.txt"
+        ],
+        "without_rerank": [
+          "alice/hiking_trip_itinerary.txt",
+          "alice/meeting_minutes_q2.txt",
+          "alice/wifi_troubleshooting.txt",
+          "alice/vaccination_records.txt",
+          "alice/solar_install_quote.txt"
+        ]
+      },
+      "decision_basis": "personalization_resolved",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": false,
+      "expect_semantic": true,
+      "expected_file_ids": [
+        "alice/heart_health_leaflet.pdf"
+      ],
+      "expected_files": [
+        "alice/heart_health_leaflet.pdf"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 9,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "keeping",
+          "cardiovascular",
+          "system",
+          "good",
+          "shape"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 0.0,
+      "iterations": 6,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 0.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/chess_openings.md",
+        "alice/employee_handbook.pdf",
+        "alice/heart_health_leaflet.pdf",
+        "alice/hiking_trip_itinerary.txt",
+        "alice/meeting_minutes_q2.txt",
+        "alice/server_migration_plan.md",
+        "alice/solar_install_quote.txt",
+        "alice/team_offsite_agenda.docx",
+        "alice/vaccination_records.txt",
+        "alice/wifi_troubleshooting.txt"
+      ],
+      "pool_ranking_highly_relevant_at_1": 0.0,
+      "pool_ranking_reciprocal_rank": 0.0,
+      "precision_at_1": 0.0,
+      "precision_at_3": 0.0,
+      "precision_at_5": 0.0,
+      "qid": "S2",
+      "query": "keeping my cardiovascular system in good shape",
+      "raw_semantic_top": [
+        [
+          "alice/chess_openings.md",
+          0.8688
+        ],
+        [
+          "alice/hiking_trip_itinerary.txt",
+          0.8673
+        ],
+        [
+          "alice/server_migration_plan.md",
+          0.8612
+        ]
+      ],
+      "reason": "Retrieval evidence is flat across 10 candidates; personalization (get_user_activity) separates file 317 by an affinity margin of 0.37 (>= 0.25). Not counted as retrieval dominance.",
+      "recall_at_1": 0.0,
+      "recall_at_3": 0.0,
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0.1111,
+      "rerank_raw_scores": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.1429
+      ],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 4,
+      "returned_file_ids": [
+        "alice/hiking_trip_itinerary.txt",
+        "alice/vaccination_records.txt",
+        "alice/meeting_minutes_q2.txt",
+        "alice/wifi_troubleshooting.txt",
+        "alice/solar_install_quote.txt",
+        "alice/chess_openings.md",
+        "alice/server_migration_plan.md",
+        "alice/employee_handbook.pdf",
+        "alice/heart_health_leaflet.pdf",
+        "alice/team_offsite_agenda.docx"
+      ],
+      "returned_files": [
+        "alice/hiking_trip_itinerary.txt",
+        "alice/vaccination_records.txt",
+        "alice/meeting_minutes_q2.txt",
+        "alice/wifi_troubleshooting.txt",
+        "alice/solar_install_quote.txt",
+        "alice/chess_openings.md",
+        "alice/server_migration_plan.md",
+        "alice/employee_handbook.pdf",
+        "alice/heart_health_leaflet.pdf",
+        "alice/team_offsite_agenda.docx"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": 4,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [
+          [
+            "alice/chess_openings.md",
+            0.016
+          ],
+          [
+            "alice/hiking_trip_itinerary.txt",
+            0.016
+          ],
+          [
+            "alice/server_migration_plan.md",
+            0.016
+          ],
+          [
+            "alice/employee_handbook.pdf",
+            0.016
+          ],
+          [
+            "alice/meeting_minutes_q2.txt",
+            0.015
+          ]
+        ],
+        "metadata_search": [],
+        "rerank_candidates": [
+          [
+            "alice/vaccination_records.txt",
+            1.0
+          ],
+          [
+            "alice/chess_openings.md",
+            0.0
+          ],
+          [
+            "alice/employee_handbook.pdf",
+            0.0
+          ],
+          [
+            "alice/heart_health_leaflet.pdf",
+            0.0
+          ],
+          [
+            "alice/hiking_trip_itinerary.txt",
+            0.0
+          ]
+        ],
+        "semantic_search": [
+          [
+            "alice/chess_openings.md",
+            1.0
+          ],
+          [
+            "alice/hiking_trip_itinerary.txt",
+            0.998
+          ],
+          [
+            "alice/server_migration_plan.md",
+            0.991
+          ],
+          [
+            "alice/employee_handbook.pdf",
+            0.989
+          ],
+          [
+            "alice/meeting_minutes_q2.txt",
+            0.984
+          ]
+        ]
+      },
+      "status": "finish",
+      "success": false,
+      "tool_calls": 6,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 1,
+        "hybrid_search": 1,
+        "metadata_search": 1,
+        "rerank_candidates": 1,
+        "semantic_search": 1
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search",
+        "semantic_search",
+        "hybrid_search",
+        "rerank_candidates",
+        "get_user_activity"
+      ],
+      "top_evidence_source": {
+        "alice/chess_openings.md": "semantic_search",
+        "alice/employee_handbook.pdf": "semantic_search",
+        "alice/heart_health_leaflet.pdf": "semantic_search",
+        "alice/hiking_trip_itinerary.txt": "semantic_search",
+        "alice/meeting_minutes_q2.txt": "semantic_search",
+        "alice/server_migration_plan.md": "semantic_search",
+        "alice/solar_install_quote.txt": "semantic_search",
+        "alice/team_offsite_agenda.docx": "semantic_search",
+        "alice/vaccination_records.txt": "semantic_search",
+        "alice/wifi_troubleshooting.txt": "semantic_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": "semantic",
+        "verdict": "retrieval_miss"
+      },
+      "category": "S_semantic",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/embedding_primer.md"
+        ],
+        "retrieval_only": [
+          "alice/embedding_primer.md"
+        ],
+        "without_personalization": [
+          "alice/embedding_primer.md"
+        ],
+        "without_rerank": [
+          "alice/embedding_primer.md"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": false,
+      "expect_semantic": true,
+      "expected_file_ids": [
+        "alice/lease_agreement_summary.docx"
+      ],
+      "expected_files": [
+        "alice/lease_agreement_summary.docx"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": null,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "obligations",
+          "when",
+          "renting",
+          "apartment"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 0.0,
+      "iterations": 2,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 0.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/embedding_primer.md"
+      ],
+      "pool_ranking_highly_relevant_at_1": 0.0,
+      "pool_ranking_reciprocal_rank": 0.0,
+      "precision_at_1": 0.0,
+      "precision_at_3": 0.0,
+      "precision_at_5": 0.0,
+      "qid": "S3",
+      "query": "obligations when renting an apartment",
+      "raw_semantic_top": [
+        [
+          "alice/lease_agreement_summary.docx",
+          0.8769
+        ],
+        [
+          "alice/tax_filing_checklist.pdf",
+          0.8135
+        ],
+        [
+          "alice/employee_handbook.pdf",
+          0.804
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 0.0,
+      "recall_at_3": 0.0,
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 2,
+      "returned_file_ids": [
+        "alice/embedding_primer.md"
+      ],
+      "returned_files": [
+        "alice/embedding_primer.md"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [
+          [
+            "alice/embedding_primer.md",
+            1.0
+          ]
+        ],
+        "hybrid_search": [],
+        "metadata_search": [],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": false,
+      "tool_calls": 2,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search"
+      ],
+      "top_evidence_source": {
+        "alice/embedding_primer.md": "bm25_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "S_semantic",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/astronomy_observing_guide.txt",
+          "alice/car_maintenance_log.txt",
+          "alice/flight_booking_receipt.pdf",
+          "alice/hiking_trip_itinerary.txt",
+          "alice/wifi_troubleshooting.txt"
+        ],
+        "retrieval_only": [
+          "alice/astronomy_observing_guide.txt",
+          "alice/flight_booking_receipt.pdf",
+          "alice/hiking_trip_itinerary.txt",
+          "alice/wifi_troubleshooting.txt",
+          "alice/solar_install_quote.txt"
+        ],
+        "without_personalization": [
+          "alice/astronomy_observing_guide.txt",
+          "alice/car_maintenance_log.txt",
+          "alice/flight_booking_receipt.pdf",
+          "alice/hiking_trip_itinerary.txt",
+          "alice/wifi_troubleshooting.txt"
+        ],
+        "without_rerank": [
+          "alice/astronomy_observing_guide.txt",
+          "alice/flight_booking_receipt.pdf",
+          "alice/hiking_trip_itinerary.txt",
+          "alice/wifi_troubleshooting.txt",
+          "alice/solar_install_quote.txt"
+        ]
+      },
+      "decision_basis": "near_tie_unresolved",
+      "degraded_mode": true,
+      "expansion_status": "unavailable",
+      "expect_bm25": false,
+      "expect_semantic": true,
+      "expected_file_ids": [
+        "alice/astronomy_observing_guide.txt"
+      ],
+      "expected_files": [
+        "alice/astronomy_observing_guide.txt"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "watching",
+          "galaxies",
+          "constellations",
+          "night"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 6,
+      "llm_attempts": 4,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/astronomy_observing_guide.txt",
+        "alice/car_maintenance_log.txt",
+        "alice/chess_openings.md",
+        "alice/employee_handbook.pdf",
+        "alice/flight_booking_receipt.pdf",
+        "alice/hiking_trip_itinerary.txt",
+        "alice/marathon_training_schedule.docx",
+        "alice/solar_install_quote.txt",
+        "alice/team_offsite_agenda.docx",
+        "alice/wifi_troubleshooting.txt"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "S4",
+      "query": "watching galaxies and constellations at night",
+      "raw_semantic_top": [
+        [
+          "alice/astronomy_observing_guide.txt",
+          0.7768
+        ],
+        [
+          "alice/flight_booking_receipt.pdf",
+          0.7441
+        ],
+        [
+          "alice/marathon_training_schedule.docx",
+          0.6884
+        ]
+      ],
+      "reason": "Max iterations reached with flat/too-many candidates",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [
+        0.1667,
+        0.1667,
+        0.1667,
+        0.1667,
+        0.1667,
+        0.1667,
+        0.1667,
+        0.1667,
+        0.1667,
+        0.3333
+      ],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 4,
+      "returned_file_ids": [
+        "alice/astronomy_observing_guide.txt",
+        "alice/car_maintenance_log.txt",
+        "alice/flight_booking_receipt.pdf",
+        "alice/hiking_trip_itinerary.txt",
+        "alice/wifi_troubleshooting.txt",
+        "alice/solar_install_quote.txt",
+        "alice/marathon_training_schedule.docx",
+        "alice/employee_handbook.pdf",
+        "alice/team_offsite_agenda.docx",
+        "alice/chess_openings.md"
+      ],
+      "returned_files": [
+        "alice/astronomy_observing_guide.txt",
+        "alice/car_maintenance_log.txt",
+        "alice/flight_booking_receipt.pdf",
+        "alice/hiking_trip_itinerary.txt",
+        "alice/wifi_troubleshooting.txt",
+        "alice/solar_install_quote.txt",
+        "alice/marathon_training_schedule.docx",
+        "alice/employee_handbook.pdf",
+        "alice/team_offsite_agenda.docx",
+        "alice/chess_openings.md"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": 1,
+        "metadata_search": null,
+        "rerank_candidates": 2,
+        "semantic_search": 1
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [
+          [
+            "alice/astronomy_observing_guide.txt",
+            0.016
+          ],
+          [
+            "alice/flight_booking_receipt.pdf",
+            0.016
+          ],
+          [
+            "alice/marathon_training_schedule.docx",
+            0.016
+          ],
+          [
+            "alice/wifi_troubleshooting.txt",
+            0.016
+          ],
+          [
+            "alice/solar_install_quote.txt",
+            0.015
+          ]
+        ],
+        "metadata_search": [],
+        "rerank_candidates": [
+          [
+            "alice/car_maintenance_log.txt",
+            1.0
+          ],
+          [
+            "alice/astronomy_observing_guide.txt",
+            0.0
+          ],
+          [
+            "alice/chess_openings.md",
+            0.0
+          ],
+          [
+            "alice/employee_handbook.pdf",
+            0.0
+          ],
+          [
+            "alice/flight_booking_receipt.pdf",
+            0.0
+          ]
+        ],
+        "semantic_search": [
+          [
+            "alice/astronomy_observing_guide.txt",
+            1.0
+          ],
+          [
+            "alice/flight_booking_receipt.pdf",
+            0.958
+          ],
+          [
+            "alice/marathon_training_schedule.docx",
+            0.886
+          ],
+          [
+            "alice/wifi_troubleshooting.txt",
+            0.886
+          ],
+          [
+            "alice/solar_install_quote.txt",
+            0.87
+          ]
+        ]
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 6,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 1,
+        "hybrid_search": 1,
+        "metadata_search": 1,
+        "rerank_candidates": 1,
+        "semantic_search": 1
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search",
+        "semantic_search",
+        "hybrid_search",
+        "rerank_candidates",
+        "get_user_activity"
+      ],
+      "top_evidence_source": {
+        "alice/astronomy_observing_guide.txt": "semantic_search",
+        "alice/car_maintenance_log.txt": "semantic_search",
+        "alice/chess_openings.md": "semantic_search",
+        "alice/employee_handbook.pdf": "semantic_search",
+        "alice/flight_booking_receipt.pdf": "semantic_search",
+        "alice/hiking_trip_itinerary.txt": "semantic_search",
+        "alice/marathon_training_schedule.docx": "semantic_search",
+        "alice/solar_install_quote.txt": "semantic_search",
+        "alice/team_offsite_agenda.docx": "semantic_search",
+        "alice/wifi_troubleshooting.txt": "semantic_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": "semantic_search",
+        "verdict": "retrieval_ordering"
+      },
+      "category": "S_semantic",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/solar_install_quote.txt",
+          "alice/piano_practice_plan.md",
+          "alice/team_offsite_agenda.docx",
+          "alice/embedding_primer.md",
+          "alice/meeting_minutes_q2.txt"
+        ],
+        "retrieval_only": [
+          "alice/team_offsite_agenda.docx",
+          "alice/embedding_primer.md",
+          "alice/solar_install_quote.txt",
+          "alice/meeting_minutes_q2.txt",
+          "alice/employee_handbook.pdf"
+        ],
+        "without_personalization": [
+          "alice/solar_install_quote.txt",
+          "alice/piano_practice_plan.md",
+          "alice/team_offsite_agenda.docx",
+          "alice/embedding_primer.md",
+          "alice/meeting_minutes_q2.txt"
+        ],
+        "without_rerank": [
+          "alice/team_offsite_agenda.docx",
+          "alice/embedding_primer.md",
+          "alice/solar_install_quote.txt",
+          "alice/meeting_minutes_q2.txt",
+          "alice/employee_handbook.pdf"
+        ]
+      },
+      "decision_basis": "near_tie_unresolved",
+      "degraded_mode": true,
+      "expansion_status": "unavailable",
+      "expect_bm25": false,
+      "expect_semantic": true,
+      "expected_file_ids": [
+        "alice/piano_practice_plan.md"
+      ],
+      "expected_files": [
+        "alice/piano_practice_plan.md"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 2,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "routine",
+          "learning",
+          "musical",
+          "instrument"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 0.0,
+      "iterations": 6,
+      "llm_attempts": 4,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 0.6309,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/book_club_notes.md",
+        "alice/chess_openings.md",
+        "alice/embedding_primer.md",
+        "alice/employee_handbook.pdf",
+        "alice/marathon_training_schedule.docx",
+        "alice/meeting_minutes_q2.txt",
+        "alice/piano_practice_plan.md",
+        "alice/server_migration_plan.md",
+        "alice/solar_install_quote.txt",
+        "alice/team_offsite_agenda.docx"
+      ],
+      "pool_ranking_highly_relevant_at_1": 0.0,
+      "pool_ranking_reciprocal_rank": 0.5,
+      "precision_at_1": 0.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "S5",
+      "query": "routine for learning a musical instrument",
+      "raw_semantic_top": [
+        [
+          "alice/team_offsite_agenda.docx",
+          0.751
+        ],
+        [
+          "alice/embedding_primer.md",
+          0.7254
+        ],
+        [
+          "alice/employee_handbook.pdf",
+          0.7066
+        ]
+      ],
+      "reason": "Max iterations reached with flat/too-many candidates",
+      "recall_at_1": 0.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 0.5,
+      "rerank_raw_scores": [
+        0.0,
+        0.0,
+        0.0,
+        0.1667,
+        0.1667,
+        0.1667,
+        0.1667,
+        0.3333,
+        0.3333,
+        0.3333
+      ],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 4,
+      "returned_file_ids": [
+        "alice/solar_install_quote.txt",
+        "alice/piano_practice_plan.md",
+        "alice/team_offsite_agenda.docx",
+        "alice/embedding_primer.md",
+        "alice/meeting_minutes_q2.txt",
+        "alice/employee_handbook.pdf",
+        "alice/server_migration_plan.md",
+        "alice/book_club_notes.md",
+        "alice/chess_openings.md",
+        "alice/marathon_training_schedule.docx"
+      ],
+      "returned_files": [
+        "alice/solar_install_quote.txt",
+        "alice/piano_practice_plan.md",
+        "alice/team_offsite_agenda.docx",
+        "alice/embedding_primer.md",
+        "alice/meeting_minutes_q2.txt",
+        "alice/employee_handbook.pdf",
+        "alice/server_migration_plan.md",
+        "alice/book_club_notes.md",
+        "alice/chess_openings.md",
+        "alice/marathon_training_schedule.docx"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": 1,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [
+          [
+            "alice/team_offsite_agenda.docx",
+            0.016
+          ],
+          [
+            "alice/embedding_primer.md",
+            0.016
+          ],
+          [
+            "alice/employee_handbook.pdf",
+            0.016
+          ],
+          [
+            "alice/server_migration_plan.md",
+            0.016
+          ],
+          [
+            "alice/book_club_notes.md",
+            0.015
+          ]
+        ],
+        "metadata_search": [],
+        "rerank_candidates": [
+          [
+            "alice/piano_practice_plan.md",
+            1.0
+          ],
+          [
+            "alice/solar_install_quote.txt",
+            1.0
+          ],
+          [
+            "alice/team_offsite_agenda.docx",
+            1.0
+          ],
+          [
+            "alice/book_club_notes.md",
+            0.5
+          ],
+          [
+            "alice/chess_openings.md",
+            0.5
+          ]
+        ],
+        "semantic_search": [
+          [
+            "alice/team_offsite_agenda.docx",
+            1.0
+          ],
+          [
+            "alice/embedding_primer.md",
+            0.966
+          ],
+          [
+            "alice/employee_handbook.pdf",
+            0.941
+          ],
+          [
+            "alice/server_migration_plan.md",
+            0.936
+          ],
+          [
+            "alice/book_club_notes.md",
+            0.934
+          ]
+        ]
+      },
+      "status": "finish",
+      "success": false,
+      "tool_calls": 6,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 1,
+        "hybrid_search": 1,
+        "metadata_search": 1,
+        "rerank_candidates": 1,
+        "semantic_search": 1
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search",
+        "semantic_search",
+        "hybrid_search",
+        "rerank_candidates",
+        "get_user_activity"
+      ],
+      "top_evidence_source": {
+        "alice/book_club_notes.md": "semantic_search",
+        "alice/chess_openings.md": "semantic_search",
+        "alice/embedding_primer.md": "semantic_search",
+        "alice/employee_handbook.pdf": "semantic_search",
+        "alice/marathon_training_schedule.docx": "semantic_search",
+        "alice/meeting_minutes_q2.txt": "semantic_search",
+        "alice/piano_practice_plan.md": "semantic_search",
+        "alice/server_migration_plan.md": "semantic_search",
+        "alice/solar_install_quote.txt": "semantic_search",
+        "alice/team_offsite_agenda.docx": "semantic_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": "semantic",
+        "verdict": "retrieval_miss"
+      },
+      "category": "S_semantic",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/plant_biology_primer.md"
+        ],
+        "retrieval_only": [
+          "alice/plant_biology_primer.md"
+        ],
+        "without_personalization": [
+          "alice/plant_biology_primer.md"
+        ],
+        "without_rerank": [
+          "alice/plant_biology_primer.md"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": false,
+      "expect_semantic": true,
+      "expected_file_ids": [
+        "alice/solar_install_quote.txt"
+      ],
+      "expected_files": [
+        "alice/solar_install_quote.txt"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": null,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "generating",
+          "electricity",
+          "sunlight",
+          "home"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 0.0,
+      "iterations": 2,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 0.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/plant_biology_primer.md"
+      ],
+      "pool_ranking_highly_relevant_at_1": 0.0,
+      "pool_ranking_reciprocal_rank": 0.0,
+      "precision_at_1": 0.0,
+      "precision_at_3": 0.0,
+      "precision_at_5": 0.0,
+      "qid": "S6",
+      "query": "generating electricity from sunlight at home",
+      "raw_semantic_top": [
+        [
+          "alice/solar_install_quote.txt",
+          0.7334
+        ],
+        [
+          "alice/car_maintenance_log.txt",
+          0.6993
+        ],
+        [
+          "alice/server_migration_plan.md",
+          0.6914
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 0.0,
+      "recall_at_3": 0.0,
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 2,
+      "returned_file_ids": [
+        "alice/plant_biology_primer.md"
+      ],
+      "returned_files": [
+        "alice/plant_biology_primer.md"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [
+          [
+            "alice/plant_biology_primer.md",
+            1.0
+          ]
+        ],
+        "hybrid_search": [],
+        "metadata_search": [],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": false,
+      "tool_calls": 2,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search"
+      ],
+      "top_evidence_source": {
+        "alice/plant_biology_primer.md": "bm25_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "G_goal_probe",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/vaccination_records.txt",
+          "alice/marathon_training_schedule.docx"
+        ],
+        "retrieval_only": [
+          "alice/vaccination_records.txt",
+          "alice/marathon_training_schedule.docx"
+        ],
+        "without_personalization": [
+          "alice/vaccination_records.txt",
+          "alice/marathon_training_schedule.docx"
+        ],
+        "without_rerank": [
+          "alice/vaccination_records.txt",
+          "alice/marathon_training_schedule.docx"
+        ]
+      },
+      "decision_basis": "personalization_resolved",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/vaccination_records.txt"
+      ],
+      "expected_files": [
+        "alice/vaccination_records.txt"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "doctor",
+          "appointment",
+          "vaccination",
+          "schedule"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 3,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/marathon_training_schedule.docx",
+        "alice/vaccination_records.txt"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "G1",
+      "query": "doctor appointment and vaccination schedule",
+      "raw_semantic_top": [
+        [
+          "alice/vaccination_records.txt",
+          0.844
+        ],
+        [
+          "alice/solar_install_quote.txt",
+          0.7616
+        ],
+        [
+          "alice/tax_filing_checklist.pdf",
+          0.7531
+        ]
+      ],
+      "reason": "Retrieval evidence is flat across 2 candidates; personalization (get_user_activity) separates file 333 by an affinity margin of 0.25 (>= 0.25). Not counted as retrieval dominance.",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [
+        0.2,
+        0.2
+      ],
+      "rerank_zero_spread": true,
+      "retrieval_actions": 1,
+      "returned_file_ids": [
+        "alice/vaccination_records.txt",
+        "alice/marathon_training_schedule.docx"
+      ],
+      "returned_files": [
+        "alice/vaccination_records.txt",
+        "alice/marathon_training_schedule.docx"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": 2,
+        "rerank_candidates": 2,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [],
+        "metadata_search": [
+          [
+            "alice/marathon_training_schedule.docx",
+            0.25
+          ],
+          [
+            "alice/vaccination_records.txt",
+            0.25
+          ]
+        ],
+        "rerank_candidates": [
+          [
+            "alice/marathon_training_schedule.docx",
+            0.0
+          ],
+          [
+            "alice/vaccination_records.txt",
+            0.0
+          ]
+        ],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 3,
+      "tool_counts": {
+        "bm25_search": 0,
+        "get_user_activity": 1,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 1,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "rerank_candidates",
+        "get_user_activity"
+      ],
+      "top_evidence_source": {
+        "alice/marathon_training_schedule.docx": "metadata_search",
+        "alice/vaccination_records.txt": "metadata_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "G_goal_probe",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/plant_biology_primer.md"
+        ],
+        "retrieval_only": [
+          "alice/plant_biology_primer.md"
+        ],
+        "without_personalization": [
+          "alice/plant_biology_primer.md"
+        ],
+        "without_rerank": [
+          "alice/plant_biology_primer.md"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/plant_biology_primer.md"
+      ],
+      "expected_files": [
+        "alice/plant_biology_primer.md"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "how",
+          "photosynthesis",
+          "works",
+          "leaves"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 2,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/plant_biology_primer.md"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "G2",
+      "query": "how photosynthesis works in leaves",
+      "raw_semantic_top": [
+        [
+          "alice/plant_biology_primer.md",
+          0.8476
+        ],
+        [
+          "alice/astronomy_observing_guide.txt",
+          0.7823
+        ],
+        [
+          "alice/field_report_2023.docx",
+          0.751
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 2,
+      "returned_file_ids": [
+        "alice/plant_biology_primer.md"
+      ],
+      "returned_files": [
+        "alice/plant_biology_primer.md"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": 1,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [
+          [
+            "alice/plant_biology_primer.md",
+            1.0
+          ]
+        ],
+        "hybrid_search": [],
+        "metadata_search": [],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 2,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search"
+      ],
+      "top_evidence_source": {
+        "alice/plant_biology_primer.md": "bm25_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "G_goal_probe",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/lisbon_dining_guide.pdf"
+        ],
+        "retrieval_only": [
+          "alice/lisbon_dining_guide.pdf"
+        ],
+        "without_personalization": [
+          "alice/lisbon_dining_guide.pdf"
+        ],
+        "without_rerank": [
+          "alice/lisbon_dining_guide.pdf"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/lisbon_dining_guide.pdf"
+      ],
+      "expected_files": [
+        "alice/lisbon_dining_guide.pdf"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "excellent",
+          "seafood",
+          "restaurants",
+          "lisbon"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 1,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/lisbon_dining_guide.pdf"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "G3",
+      "query": "excellent seafood restaurants in Lisbon",
+      "raw_semantic_top": [
+        [
+          "alice/lisbon_dining_guide.pdf",
+          0.833
+        ],
+        [
+          "alice/heart_health_leaflet.pdf",
+          0.7167
+        ],
+        [
+          "alice/kitchen_notes.txt",
+          0.7082
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 1,
+      "returned_file_ids": [
+        "alice/lisbon_dining_guide.pdf"
+      ],
+      "returned_files": [
+        "alice/lisbon_dining_guide.pdf"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": 1,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [],
+        "metadata_search": [
+          [
+            "alice/lisbon_dining_guide.pdf",
+            0.25
+          ]
+        ],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 1,
+      "tool_counts": {
+        "bm25_search": 0,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search"
+      ],
+      "top_evidence_source": {
+        "alice/lisbon_dining_guide.pdf": "metadata_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "G_goal_probe",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/embedding_primer.md"
+        ],
+        "retrieval_only": [
+          "alice/embedding_primer.md"
+        ],
+        "without_personalization": [
+          "alice/embedding_primer.md"
+        ],
+        "without_rerank": [
+          "alice/embedding_primer.md"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/embedding_primer.md"
+      ],
+      "expected_files": [
+        "alice/embedding_primer.md"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "learned",
+          "numeric",
+          "representations",
+          "words"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 2,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/embedding_primer.md"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "G4",
+      "query": "learned numeric representations of words",
+      "raw_semantic_top": [
+        [
+          "alice/embedding_primer.md",
+          0.8454
+        ],
+        [
+          "alice/tax_filing_checklist.pdf",
+          0.7476
+        ],
+        [
+          "alice/employee_handbook.pdf",
+          0.7309
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 2,
+      "returned_file_ids": [
+        "alice/embedding_primer.md"
+      ],
+      "returned_files": [
+        "alice/embedding_primer.md"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": 1,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [
+          [
+            "alice/embedding_primer.md",
+            1.0
+          ]
+        ],
+        "hybrid_search": [],
+        "metadata_search": [],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 2,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search"
+      ],
+      "top_evidence_source": {
+        "alice/embedding_primer.md": "bm25_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "G_goal_probe",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/erosion_survey.txt",
+          "alice/field_report_2023.docx"
+        ],
+        "retrieval_only": [
+          "alice/erosion_survey.txt",
+          "alice/field_report_2023.docx"
+        ],
+        "without_personalization": [
+          "alice/erosion_survey.txt",
+          "alice/field_report_2023.docx"
+        ],
+        "without_rerank": [
+          "alice/erosion_survey.txt",
+          "alice/field_report_2023.docx"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/erosion_survey.txt"
+      ],
+      "expected_files": [
+        "alice/erosion_survey.txt"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "landslides",
+          "northern",
+          "slope"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 2,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/erosion_survey.txt",
+        "alice/field_report_2023.docx"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "G5",
+      "query": "landslides on the northern slope",
+      "raw_semantic_top": [
+        [
+          "alice/erosion_survey.txt",
+          0.8595
+        ],
+        [
+          "alice/meeting_minutes_q2.txt",
+          0.7714
+        ],
+        [
+          "alice/field_report_2023.docx",
+          0.7598
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 2,
+      "returned_file_ids": [
+        "alice/erosion_survey.txt",
+        "alice/field_report_2023.docx"
+      ],
+      "returned_files": [
+        "alice/erosion_survey.txt",
+        "alice/field_report_2023.docx"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": 1,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [
+          [
+            "alice/erosion_survey.txt",
+            1.0
+          ],
+          [
+            "alice/field_report_2023.docx",
+            0.247
+          ]
+        ],
+        "hybrid_search": [],
+        "metadata_search": [],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 2,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search"
+      ],
+      "top_evidence_source": {
+        "alice/erosion_survey.txt": "bm25_search",
+        "alice/field_report_2023.docx": "bm25_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "A_ambiguous",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/kitchen_notes.txt",
+          "alice/book_club_notes.md"
+        ],
+        "retrieval_only": [
+          "alice/kitchen_notes.txt",
+          "alice/book_club_notes.md"
+        ],
+        "without_personalization": [
+          "alice/kitchen_notes.txt",
+          "alice/book_club_notes.md"
+        ],
+        "without_rerank": [
+          "alice/kitchen_notes.txt",
+          "alice/book_club_notes.md"
+        ]
+      },
+      "decision_basis": "personalization_resolved",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/book_club_notes.md",
+        "alice/kitchen_notes.txt"
+      ],
+      "expected_files": [
+        "alice/book_club_notes.md",
+        "alice/kitchen_notes.txt"
+      ],
+      "expected_outcome": "clarify_or_results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.65,
+        "file_type": "docx",
+        "filename_candidate": null,
+        "topic_tokens": [
+          "notes"
+        ]
+      },
+      "goal_blocks_relevant": true,
+      "hard_failure": false,
+      "highly_relevant_at_1": null,
+      "iterations": 4,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/book_club_notes.md",
+        "alice/kitchen_notes.txt"
+      ],
+      "pool_ranking_highly_relevant_at_1": null,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.6667,
+      "precision_at_5": 0.4,
+      "qid": "A1",
+      "query": "the notes",
+      "raw_semantic_top": [
+        [
+          "alice/book_club_notes.md",
+          0.7526
+        ],
+        [
+          "alice/wifi_troubleshooting.txt",
+          0.7081
+        ],
+        [
+          "alice/lease_agreement_summary.docx",
+          0.683
+        ]
+      ],
+      "reason": "Retrieval evidence is flat across 2 candidates; personalization (get_user_activity) separates file 318 by an affinity margin of 0.25 (>= 0.25). Not counted as retrieval dominance.",
+      "recall_at_1": 0.5,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [
+        0.5,
+        0.5
+      ],
+      "rerank_zero_spread": true,
+      "retrieval_actions": 2,
+      "returned_file_ids": [
+        "alice/kitchen_notes.txt",
+        "alice/book_club_notes.md"
+      ],
+      "returned_files": [
+        "alice/kitchen_notes.txt",
+        "alice/book_club_notes.md"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": 1,
+        "rerank_candidates": 1,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [],
+        "metadata_search": [
+          [
+            "alice/book_club_notes.md",
+            1.0
+          ],
+          [
+            "alice/kitchen_notes.txt",
+            1.0
+          ]
+        ],
+        "rerank_candidates": [
+          [
+            "alice/book_club_notes.md",
+            0.0
+          ],
+          [
+            "alice/kitchen_notes.txt",
+            0.0
+          ]
+        ],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 4,
+      "tool_counts": {
+        "bm25_search": 0,
+        "get_user_activity": 1,
+        "hybrid_search": 0,
+        "metadata_search": 2,
+        "rerank_candidates": 1,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "metadata_search",
+        "rerank_candidates",
+        "get_user_activity"
+      ],
+      "top_evidence_source": {
+        "alice/book_club_notes.md": "metadata_search",
+        "alice/kitchen_notes.txt": "metadata_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "A_ambiguous",
+      "clarified": true,
+      "counterfactual": {
+        "final": [
+          "alice/piano_practice_plan.md",
+          "alice/plant_biology_primer.md",
+          "alice/server_migration_plan.md"
+        ],
+        "retrieval_only": [
+          "alice/piano_practice_plan.md",
+          "alice/plant_biology_primer.md",
+          "alice/server_migration_plan.md"
+        ],
+        "without_personalization": [
+          "alice/piano_practice_plan.md",
+          "alice/plant_biology_primer.md",
+          "alice/server_migration_plan.md"
+        ],
+        "without_rerank": [
+          "alice/piano_practice_plan.md",
+          "alice/plant_biology_primer.md",
+          "alice/server_migration_plan.md"
+        ]
+      },
+      "decision_basis": null,
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/marathon_training_schedule.docx",
+        "alice/server_migration_plan.md"
+      ],
+      "expected_files": [
+        "alice/marathon_training_schedule.docx",
+        "alice/server_migration_plan.md"
+      ],
+      "expected_outcome": "clarify_or_results",
+      "first_relevant_rank": null,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.9,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "plan"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": null,
+      "iterations": 3,
+      "llm_attempts": 2,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 0.0,
+      "no_result": true,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/piano_practice_plan.md",
+        "alice/plant_biology_primer.md",
+        "alice/server_migration_plan.md"
+      ],
+      "pool_ranking_highly_relevant_at_1": null,
+      "pool_ranking_reciprocal_rank": 0.3333,
+      "precision_at_1": 0.0,
+      "precision_at_3": 0.0,
+      "precision_at_5": 0.0,
+      "qid": "A2",
+      "query": "the plan",
+      "raw_semantic_top": [
+        [
+          "alice/quarterly_budget_review.txt",
+          0.8448
+        ],
+        [
+          "alice/server_migration_plan.md",
+          0.8212
+        ],
+        [
+          "alice/car_maintenance_log.txt",
+          0.8007
+        ]
+      ],
+      "reason": "Genuinely ambiguous: 3 candidates are tied on retrieval evidence and personalization does not meaningfully separate them; asking the user to disambiguate.",
+      "recall_at_1": 0.0,
+      "recall_at_3": 0.0,
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0.0,
+      "rerank_raw_scores": [
+        0.0,
+        0.5,
+        0.5
+      ],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 1,
+      "returned_file_ids": [],
+      "returned_files": [],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": 3,
+        "rerank_candidates": 2,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [],
+        "metadata_search": [
+          [
+            "alice/piano_practice_plan.md",
+            1.0
+          ],
+          [
+            "alice/plant_biology_primer.md",
+            1.0
+          ],
+          [
+            "alice/server_migration_plan.md",
+            1.0
+          ]
+        ],
+        "rerank_candidates": [
+          [
+            "alice/piano_practice_plan.md",
+            1.0
+          ],
+          [
+            "alice/server_migration_plan.md",
+            1.0
+          ],
+          [
+            "alice/plant_biology_primer.md",
+            0.0
+          ]
+        ],
+        "semantic_search": []
+      },
+      "status": "clarify",
+      "success": true,
+      "tool_calls": 3,
+      "tool_counts": {
+        "bm25_search": 0,
+        "get_user_activity": 1,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 1,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "rerank_candidates",
+        "get_user_activity"
+      ],
+      "top_evidence_source": {
+        "alice/piano_practice_plan.md": "metadata_search",
+        "alice/plant_biology_primer.md": "metadata_search",
+        "alice/server_migration_plan.md": "metadata_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": "semantic_search",
+        "verdict": "retrieval_ordering"
+      },
+      "category": "A_ambiguous",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/hiking_trip_itinerary.txt",
+          "alice/solar_install_quote.txt",
+          "alice/flight_booking_receipt.pdf",
+          "alice/team_offsite_agenda.docx",
+          "alice/stock_market_primer.txt"
+        ],
+        "retrieval_only": [
+          "alice/hiking_trip_itinerary.txt",
+          "alice/flight_booking_receipt.pdf",
+          "alice/team_offsite_agenda.docx",
+          "alice/stock_market_primer.txt",
+          "alice/employee_handbook.pdf"
+        ],
+        "without_personalization": [
+          "alice/hiking_trip_itinerary.txt",
+          "alice/solar_install_quote.txt",
+          "alice/flight_booking_receipt.pdf",
+          "alice/team_offsite_agenda.docx",
+          "alice/stock_market_primer.txt"
+        ],
+        "without_rerank": [
+          "alice/hiking_trip_itinerary.txt",
+          "alice/flight_booking_receipt.pdf",
+          "alice/team_offsite_agenda.docx",
+          "alice/stock_market_primer.txt",
+          "alice/employee_handbook.pdf"
+        ]
+      },
+      "decision_basis": "personalization_resolved",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": false,
+      "expect_semantic": true,
+      "expected_file_ids": [
+        "alice/quarterly_budget_review.txt",
+        "alice/stock_market_primer.txt",
+        "alice/tax_filing_checklist.pdf"
+      ],
+      "expected_files": [
+        "alice/quarterly_budget_review.txt",
+        "alice/stock_market_primer.txt",
+        "alice/tax_filing_checklist.pdf"
+      ],
+      "expected_outcome": "clarify_or_results",
+      "first_relevant_rank": 5,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.8,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "something",
+          "money"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": null,
+      "iterations": 6,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 0.1815,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/employee_handbook.pdf",
+        "alice/flight_booking_receipt.pdf",
+        "alice/hiking_trip_itinerary.txt",
+        "alice/lease_agreement_summary.docx",
+        "alice/marathon_training_schedule.docx",
+        "alice/solar_install_quote.txt",
+        "alice/stock_market_primer.txt",
+        "alice/tax_filing_checklist.pdf",
+        "alice/team_offsite_agenda.docx",
+        "alice/wifi_troubleshooting.txt"
+      ],
+      "pool_ranking_highly_relevant_at_1": null,
+      "pool_ranking_reciprocal_rank": 0.2,
+      "precision_at_1": 0.0,
+      "precision_at_3": 0.0,
+      "precision_at_5": 0.2,
+      "qid": "A3",
+      "query": "something about money",
+      "raw_semantic_top": [
+        [
+          "alice/team_offsite_agenda.docx",
+          0.8485
+        ],
+        [
+          "alice/flight_booking_receipt.pdf",
+          0.8435
+        ],
+        [
+          "alice/employee_handbook.pdf",
+          0.8413
+        ]
+      ],
+      "reason": "Retrieval evidence is flat across 10 candidates; personalization (get_user_activity) separates file 317 by an affinity margin of 0.37 (>= 0.25). Not counted as retrieval dominance.",
+      "recall_at_1": 0.0,
+      "recall_at_3": 0.0,
+      "recall_at_5": 0.3333,
+      "reciprocal_rank": 0.2,
+      "rerank_raw_scores": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.3333
+      ],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 4,
+      "returned_file_ids": [
+        "alice/hiking_trip_itinerary.txt",
+        "alice/solar_install_quote.txt",
+        "alice/flight_booking_receipt.pdf",
+        "alice/team_offsite_agenda.docx",
+        "alice/stock_market_primer.txt",
+        "alice/employee_handbook.pdf",
+        "alice/wifi_troubleshooting.txt",
+        "alice/marathon_training_schedule.docx",
+        "alice/tax_filing_checklist.pdf",
+        "alice/lease_agreement_summary.docx"
+      ],
+      "returned_files": [
+        "alice/hiking_trip_itinerary.txt",
+        "alice/solar_install_quote.txt",
+        "alice/flight_booking_receipt.pdf",
+        "alice/team_offsite_agenda.docx",
+        "alice/stock_market_primer.txt",
+        "alice/employee_handbook.pdf",
+        "alice/wifi_troubleshooting.txt",
+        "alice/marathon_training_schedule.docx",
+        "alice/tax_filing_checklist.pdf",
+        "alice/lease_agreement_summary.docx"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": null,
+        "semantic_search": 5
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [
+          [
+            "alice/solar_install_quote.txt",
+            0.031
+          ],
+          [
+            "alice/team_offsite_agenda.docx",
+            0.016
+          ],
+          [
+            "alice/flight_booking_receipt.pdf",
+            0.016
+          ],
+          [
+            "alice/employee_handbook.pdf",
+            0.016
+          ],
+          [
+            "alice/hiking_trip_itinerary.txt",
+            0.016
+          ]
+        ],
+        "metadata_search": [],
+        "rerank_candidates": [
+          [
+            "alice/solar_install_quote.txt",
+            1.0
+          ],
+          [
+            "alice/employee_handbook.pdf",
+            0.0
+          ],
+          [
+            "alice/flight_booking_receipt.pdf",
+            0.0
+          ],
+          [
+            "alice/hiking_trip_itinerary.txt",
+            0.0
+          ],
+          [
+            "alice/lease_agreement_summary.docx",
+            0.0
+          ]
+        ],
+        "semantic_search": [
+          [
+            "alice/team_offsite_agenda.docx",
+            1.0
+          ],
+          [
+            "alice/flight_booking_receipt.pdf",
+            0.994
+          ],
+          [
+            "alice/employee_handbook.pdf",
+            0.992
+          ],
+          [
+            "alice/hiking_trip_itinerary.txt",
+            0.958
+          ],
+          [
+            "alice/stock_market_primer.txt",
+            0.952
+          ]
+        ]
+      },
+      "status": "finish",
+      "success": false,
+      "tool_calls": 6,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 1,
+        "hybrid_search": 1,
+        "metadata_search": 1,
+        "rerank_candidates": 1,
+        "semantic_search": 1
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search",
+        "semantic_search",
+        "hybrid_search",
+        "rerank_candidates",
+        "get_user_activity"
+      ],
+      "top_evidence_source": {
+        "alice/employee_handbook.pdf": "semantic_search",
+        "alice/flight_booking_receipt.pdf": "semantic_search",
+        "alice/hiking_trip_itinerary.txt": "semantic_search",
+        "alice/lease_agreement_summary.docx": "semantic_search",
+        "alice/marathon_training_schedule.docx": "semantic_search",
+        "alice/solar_install_quote.txt": "semantic_search",
+        "alice/stock_market_primer.txt": "semantic_search",
+        "alice/tax_filing_checklist.pdf": "semantic_search",
+        "alice/team_offsite_agenda.docx": "semantic_search",
+        "alice/wifi_troubleshooting.txt": "semantic_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "P_personalization",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/recipe_pasta.md"
+        ],
+        "retrieval_only": [
+          "alice/recipe_pasta.md"
+        ],
+        "without_personalization": [
+          "alice/recipe_pasta.md"
+        ],
+        "without_rerank": [
+          "alice/recipe_pasta.md"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/recipe_pasta.md",
+        "alice/thai_curry_guide.txt"
+      ],
+      "expected_files": [
+        "alice/recipe_pasta.md",
+        "alice/thai_curry_guide.txt"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "dinner",
+          "recipe",
+          "ideas"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 0.0,
+      "iterations": 1,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 0.2754,
+      "no_result": false,
+      "personalization_relevant": true,
+      "pool_files": [
+        "alice/recipe_pasta.md"
+      ],
+      "pool_ranking_highly_relevant_at_1": 0.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "P1",
+      "query": "dinner recipe ideas",
+      "raw_semantic_top": [
+        [
+          "alice/recipe_pasta.md",
+          0.7272
+        ],
+        [
+          "alice/thai_curry_guide.txt",
+          0.6939
+        ],
+        [
+          "alice/lisbon_dining_guide.pdf",
+          0.6257
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 0.5,
+      "recall_at_3": 0.5,
+      "recall_at_5": 0.5,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 1,
+      "returned_file_ids": [
+        "alice/recipe_pasta.md"
+      ],
+      "returned_files": [
+        "alice/recipe_pasta.md"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": 1,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [],
+        "metadata_search": [
+          [
+            "alice/recipe_pasta.md",
+            0.333
+          ]
+        ],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 1,
+      "tool_counts": {
+        "bm25_search": 0,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search"
+      ],
+      "top_evidence_source": {
+        "alice/recipe_pasta.md": "metadata_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "P_personalization",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/hiking_trip_itinerary.txt"
+        ],
+        "retrieval_only": [
+          "alice/hiking_trip_itinerary.txt"
+        ],
+        "without_personalization": [
+          "alice/hiking_trip_itinerary.txt"
+        ],
+        "without_rerank": [
+          "alice/hiking_trip_itinerary.txt"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": true,
+      "expected_file_ids": [
+        "alice/flight_booking_receipt.pdf",
+        "alice/hiking_trip_itinerary.txt"
+      ],
+      "expected_files": [
+        "alice/flight_booking_receipt.pdf",
+        "alice/hiking_trip_itinerary.txt"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.8,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "trip",
+          "plans"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 1,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 0.8262,
+      "no_result": false,
+      "personalization_relevant": true,
+      "pool_files": [
+        "alice/hiking_trip_itinerary.txt"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "P2",
+      "query": "trip plans",
+      "raw_semantic_top": [
+        [
+          "alice/recipe_pasta.md",
+          0.6462
+        ],
+        [
+          "alice/quarterly_budget_review.txt",
+          0.641
+        ],
+        [
+          "alice/lisbon_dining_guide.pdf",
+          0.6247
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 0.5,
+      "recall_at_3": 0.5,
+      "recall_at_5": 0.5,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 1,
+      "returned_file_ids": [
+        "alice/hiking_trip_itinerary.txt"
+      ],
+      "returned_files": [
+        "alice/hiking_trip_itinerary.txt"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": 1,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [],
+        "metadata_search": [
+          [
+            "alice/hiking_trip_itinerary.txt",
+            0.5
+          ]
+        ],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 1,
+      "tool_counts": {
+        "bm25_search": 0,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search"
+      ],
+      "top_evidence_source": {
+        "alice/hiking_trip_itinerary.txt": "metadata_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": "semantic_search",
+        "verdict": "false_positive"
+      },
+      "category": "N_no_result",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/plant_biology_primer.md",
+          "alice/field_report_2023.docx",
+          "alice/astronomy_observing_guide.txt",
+          "alice/meeting_minutes_q2.txt",
+          "alice/embedding_primer.md"
+        ],
+        "retrieval_only": [
+          "alice/plant_biology_primer.md",
+          "alice/field_report_2023.docx",
+          "alice/astronomy_observing_guide.txt",
+          "alice/meeting_minutes_q2.txt",
+          "alice/embedding_primer.md"
+        ],
+        "without_personalization": [
+          "alice/plant_biology_primer.md",
+          "alice/field_report_2023.docx",
+          "alice/astronomy_observing_guide.txt",
+          "alice/meeting_minutes_q2.txt",
+          "alice/embedding_primer.md"
+        ],
+        "without_rerank": [
+          "alice/plant_biology_primer.md",
+          "alice/field_report_2023.docx",
+          "alice/astronomy_observing_guide.txt",
+          "alice/meeting_minutes_q2.txt",
+          "alice/embedding_primer.md"
+        ]
+      },
+      "decision_basis": "near_tie_unresolved",
+      "degraded_mode": true,
+      "expansion_status": "unavailable",
+      "expect_bm25": false,
+      "expect_semantic": false,
+      "expected_file_ids": [],
+      "expected_files": [],
+      "expected_outcome": "no_result",
+      "first_relevant_rank": null,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "quantum",
+          "chromodynamics",
+          "lattice",
+          "gauge",
+          "theory"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": null,
+      "iterations": 6,
+      "llm_attempts": 4,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": null,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/astronomy_observing_guide.txt",
+        "alice/book_club_notes.md",
+        "alice/embedding_primer.md",
+        "alice/employee_handbook.pdf",
+        "alice/field_report_2023.docx",
+        "alice/meeting_minutes_q2.txt",
+        "alice/plant_biology_primer.md",
+        "alice/server_migration_plan.md",
+        "alice/solar_install_quote.txt",
+        "alice/wifi_troubleshooting.txt"
+      ],
+      "pool_ranking_highly_relevant_at_1": null,
+      "pool_ranking_reciprocal_rank": null,
+      "precision_at_1": null,
+      "precision_at_3": null,
+      "precision_at_5": null,
+      "qid": "N1",
+      "query": "quantum chromodynamics lattice gauge theory",
+      "raw_semantic_top": [
+        [
+          "alice/plant_biology_primer.md",
+          0.4215
+        ],
+        [
+          "alice/field_report_2023.docx",
+          0.4012
+        ],
+        [
+          "alice/astronomy_observing_guide.txt",
+          0.3623
+        ]
+      ],
+      "reason": "Max iterations reached with flat/too-many candidates",
+      "recall_at_1": null,
+      "recall_at_3": null,
+      "recall_at_5": null,
+      "reciprocal_rank": null,
+      "rerank_raw_scores": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rerank_zero_spread": true,
+      "retrieval_actions": 4,
+      "returned_file_ids": [
+        "alice/plant_biology_primer.md",
+        "alice/field_report_2023.docx",
+        "alice/astronomy_observing_guide.txt",
+        "alice/meeting_minutes_q2.txt",
+        "alice/embedding_primer.md",
+        "alice/server_migration_plan.md",
+        "alice/solar_install_quote.txt",
+        "alice/wifi_troubleshooting.txt",
+        "alice/book_club_notes.md",
+        "alice/employee_handbook.pdf"
+      ],
+      "returned_files": [
+        "alice/plant_biology_primer.md",
+        "alice/field_report_2023.docx",
+        "alice/astronomy_observing_guide.txt",
+        "alice/meeting_minutes_q2.txt",
+        "alice/embedding_primer.md",
+        "alice/server_migration_plan.md",
+        "alice/solar_install_quote.txt",
+        "alice/wifi_troubleshooting.txt",
+        "alice/book_club_notes.md",
+        "alice/employee_handbook.pdf"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [
+          [
+            "alice/plant_biology_primer.md",
+            0.016
+          ],
+          [
+            "alice/field_report_2023.docx",
+            0.016
+          ],
+          [
+            "alice/astronomy_observing_guide.txt",
+            0.016
+          ],
+          [
+            "alice/meeting_minutes_q2.txt",
+            0.016
+          ],
+          [
+            "alice/embedding_primer.md",
+            0.015
+          ]
+        ],
+        "metadata_search": [],
+        "rerank_candidates": [
+          [
+            "alice/astronomy_observing_guide.txt",
+            0.0
+          ],
+          [
+            "alice/book_club_notes.md",
+            0.0
+          ],
+          [
+            "alice/embedding_primer.md",
+            0.0
+          ],
+          [
+            "alice/employee_handbook.pdf",
+            0.0
+          ],
+          [
+            "alice/field_report_2023.docx",
+            0.0
+          ]
+        ],
+        "semantic_search": [
+          [
+            "alice/plant_biology_primer.md",
+            1.0
+          ],
+          [
+            "alice/field_report_2023.docx",
+            0.952
+          ],
+          [
+            "alice/astronomy_observing_guide.txt",
+            0.86
+          ],
+          [
+            "alice/meeting_minutes_q2.txt",
+            0.85
+          ],
+          [
+            "alice/embedding_primer.md",
+            0.838
+          ]
+        ]
+      },
+      "status": "finish",
+      "success": false,
+      "tool_calls": 6,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 1,
+        "hybrid_search": 1,
+        "metadata_search": 1,
+        "rerank_candidates": 1,
+        "semantic_search": 1
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search",
+        "semantic_search",
+        "hybrid_search",
+        "rerank_candidates",
+        "get_user_activity"
+      ],
+      "top_evidence_source": {
+        "alice/astronomy_observing_guide.txt": "semantic_search",
+        "alice/book_club_notes.md": "semantic_search",
+        "alice/embedding_primer.md": "semantic_search",
+        "alice/employee_handbook.pdf": "semantic_search",
+        "alice/field_report_2023.docx": "semantic_search",
+        "alice/meeting_minutes_q2.txt": "semantic_search",
+        "alice/plant_biology_primer.md": "semantic_search",
+        "alice/server_migration_plan.md": "semantic_search",
+        "alice/solar_install_quote.txt": "semantic_search",
+        "alice/wifi_troubleshooting.txt": "semantic_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": "semantic_search",
+        "verdict": "false_positive"
+      },
+      "category": "N_no_result",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/chess_openings.md",
+          "alice/hiking_trip_itinerary.txt",
+          "alice/astronomy_observing_guide.txt",
+          "alice/erosion_survey.txt",
+          "alice/meeting_minutes_q2.txt"
+        ],
+        "retrieval_only": [
+          "alice/chess_openings.md",
+          "alice/hiking_trip_itinerary.txt",
+          "alice/astronomy_observing_guide.txt",
+          "alice/erosion_survey.txt",
+          "alice/meeting_minutes_q2.txt"
+        ],
+        "without_personalization": [
+          "alice/chess_openings.md",
+          "alice/hiking_trip_itinerary.txt",
+          "alice/astronomy_observing_guide.txt",
+          "alice/erosion_survey.txt",
+          "alice/meeting_minutes_q2.txt"
+        ],
+        "without_rerank": [
+          "alice/chess_openings.md",
+          "alice/hiking_trip_itinerary.txt",
+          "alice/astronomy_observing_guide.txt",
+          "alice/erosion_survey.txt",
+          "alice/meeting_minutes_q2.txt"
+        ]
+      },
+      "decision_basis": "near_tie_unresolved",
+      "degraded_mode": true,
+      "expansion_status": "unavailable",
+      "expect_bm25": false,
+      "expect_semantic": false,
+      "expected_file_ids": [],
+      "expected_files": [],
+      "expected_outcome": "no_result",
+      "first_relevant_rank": null,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "medieval",
+          "siege",
+          "warfare",
+          "catapults",
+          "trebuchets"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": null,
+      "iterations": 6,
+      "llm_attempts": 4,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": null,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/astronomy_observing_guide.txt",
+        "alice/chess_openings.md",
+        "alice/employee_handbook.pdf",
+        "alice/erosion_survey.txt",
+        "alice/garden_journal.md",
+        "alice/hiking_trip_itinerary.txt",
+        "alice/marathon_training_schedule.docx",
+        "alice/meeting_minutes_q2.txt",
+        "alice/piano_practice_plan.md",
+        "alice/team_offsite_agenda.docx"
+      ],
+      "pool_ranking_highly_relevant_at_1": null,
+      "pool_ranking_reciprocal_rank": null,
+      "precision_at_1": null,
+      "precision_at_3": null,
+      "precision_at_5": null,
+      "qid": "N2",
+      "query": "medieval siege warfare catapults and trebuchets",
+      "raw_semantic_top": [
+        [
+          "alice/chess_openings.md",
+          0.6573
+        ],
+        [
+          "alice/astronomy_observing_guide.txt",
+          0.5661
+        ],
+        [
+          "alice/hiking_trip_itinerary.txt",
+          0.5255
+        ]
+      ],
+      "reason": "Max iterations reached with flat/too-many candidates",
+      "recall_at_1": null,
+      "recall_at_3": null,
+      "recall_at_5": null,
+      "reciprocal_rank": null,
+      "rerank_raw_scores": [
+        0.1667,
+        0.1667,
+        0.1667,
+        0.1667,
+        0.1667,
+        0.1667,
+        0.1667,
+        0.1667,
+        0.1667,
+        0.1667
+      ],
+      "rerank_zero_spread": true,
+      "retrieval_actions": 4,
+      "returned_file_ids": [
+        "alice/chess_openings.md",
+        "alice/hiking_trip_itinerary.txt",
+        "alice/astronomy_observing_guide.txt",
+        "alice/erosion_survey.txt",
+        "alice/meeting_minutes_q2.txt",
+        "alice/employee_handbook.pdf",
+        "alice/garden_journal.md",
+        "alice/team_offsite_agenda.docx",
+        "alice/piano_practice_plan.md",
+        "alice/marathon_training_schedule.docx"
+      ],
+      "returned_files": [
+        "alice/chess_openings.md",
+        "alice/hiking_trip_itinerary.txt",
+        "alice/astronomy_observing_guide.txt",
+        "alice/erosion_survey.txt",
+        "alice/meeting_minutes_q2.txt",
+        "alice/employee_handbook.pdf",
+        "alice/garden_journal.md",
+        "alice/team_offsite_agenda.docx",
+        "alice/piano_practice_plan.md",
+        "alice/marathon_training_schedule.docx"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [
+          [
+            "alice/chess_openings.md",
+            0.016
+          ],
+          [
+            "alice/astronomy_observing_guide.txt",
+            0.016
+          ],
+          [
+            "alice/hiking_trip_itinerary.txt",
+            0.016
+          ],
+          [
+            "alice/erosion_survey.txt",
+            0.016
+          ],
+          [
+            "alice/meeting_minutes_q2.txt",
+            0.015
+          ]
+        ],
+        "metadata_search": [],
+        "rerank_candidates": [
+          [
+            "alice/astronomy_observing_guide.txt",
+            0.0
+          ],
+          [
+            "alice/chess_openings.md",
+            0.0
+          ],
+          [
+            "alice/employee_handbook.pdf",
+            0.0
+          ],
+          [
+            "alice/erosion_survey.txt",
+            0.0
+          ],
+          [
+            "alice/garden_journal.md",
+            0.0
+          ]
+        ],
+        "semantic_search": [
+          [
+            "alice/chess_openings.md",
+            1.0
+          ],
+          [
+            "alice/astronomy_observing_guide.txt",
+            0.861
+          ],
+          [
+            "alice/hiking_trip_itinerary.txt",
+            0.799
+          ],
+          [
+            "alice/erosion_survey.txt",
+            0.792
+          ],
+          [
+            "alice/meeting_minutes_q2.txt",
+            0.79
+          ]
+        ]
+      },
+      "status": "finish",
+      "success": false,
+      "tool_calls": 6,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 1,
+        "hybrid_search": 1,
+        "metadata_search": 1,
+        "rerank_candidates": 1,
+        "semantic_search": 1
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search",
+        "semantic_search",
+        "hybrid_search",
+        "rerank_candidates",
+        "get_user_activity"
+      ],
+      "top_evidence_source": {
+        "alice/astronomy_observing_guide.txt": "semantic_search",
+        "alice/chess_openings.md": "semantic_search",
+        "alice/employee_handbook.pdf": "semantic_search",
+        "alice/erosion_survey.txt": "semantic_search",
+        "alice/garden_journal.md": "semantic_search",
+        "alice/hiking_trip_itinerary.txt": "semantic_search",
+        "alice/marathon_training_schedule.docx": "semantic_search",
+        "alice/meeting_minutes_q2.txt": "semantic_search",
+        "alice/piano_practice_plan.md": "semantic_search",
+        "alice/team_offsite_agenda.docx": "semantic_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": "semantic_search",
+        "verdict": "false_positive"
+      },
+      "category": "N_no_result",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/stock_market_primer.txt",
+          "alice/field_report_2023.docx",
+          "alice/server_migration_plan.md",
+          "alice/quarterly_budget_review.txt",
+          "alice/meeting_minutes_q2.txt"
+        ],
+        "retrieval_only": [
+          "alice/stock_market_primer.txt",
+          "alice/field_report_2023.docx",
+          "alice/server_migration_plan.md",
+          "alice/quarterly_budget_review.txt",
+          "alice/meeting_minutes_q2.txt"
+        ],
+        "without_personalization": [
+          "alice/stock_market_primer.txt",
+          "alice/field_report_2023.docx",
+          "alice/server_migration_plan.md",
+          "alice/quarterly_budget_review.txt",
+          "alice/meeting_minutes_q2.txt"
+        ],
+        "without_rerank": [
+          "alice/stock_market_primer.txt",
+          "alice/field_report_2023.docx",
+          "alice/server_migration_plan.md",
+          "alice/quarterly_budget_review.txt",
+          "alice/meeting_minutes_q2.txt"
+        ]
+      },
+      "decision_basis": "near_tie_unresolved",
+      "degraded_mode": true,
+      "expansion_status": "unavailable",
+      "expect_bm25": false,
+      "expect_semantic": false,
+      "expected_file_ids": [],
+      "expected_files": [],
+      "expected_outcome": "no_result",
+      "first_relevant_rank": null,
+      "forbidden_files": [],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "cryptocurrency",
+          "mining",
+          "hardware",
+          "profitability"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": null,
+      "iterations": 6,
+      "llm_attempts": 4,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": null,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/car_maintenance_log.txt",
+        "alice/employee_handbook.pdf",
+        "alice/erosion_survey.txt",
+        "alice/field_report_2023.docx",
+        "alice/garden_journal.md",
+        "alice/meeting_minutes_q2.txt",
+        "alice/quarterly_budget_review.txt",
+        "alice/server_migration_plan.md",
+        "alice/solar_install_quote.txt",
+        "alice/stock_market_primer.txt"
+      ],
+      "pool_ranking_highly_relevant_at_1": null,
+      "pool_ranking_reciprocal_rank": null,
+      "precision_at_1": null,
+      "precision_at_3": null,
+      "precision_at_5": null,
+      "qid": "N3",
+      "query": "cryptocurrency mining hardware profitability",
+      "raw_semantic_top": [
+        [
+          "alice/field_report_2023.docx",
+          0.5606
+        ],
+        [
+          "alice/stock_market_primer.txt",
+          0.5509
+        ],
+        [
+          "alice/server_migration_plan.md",
+          0.5476
+        ]
+      ],
+      "reason": "Max iterations reached with flat/too-many candidates",
+      "recall_at_1": null,
+      "recall_at_3": null,
+      "recall_at_5": null,
+      "reciprocal_rank": null,
+      "rerank_raw_scores": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rerank_zero_spread": true,
+      "retrieval_actions": 4,
+      "returned_file_ids": [
+        "alice/stock_market_primer.txt",
+        "alice/field_report_2023.docx",
+        "alice/server_migration_plan.md",
+        "alice/quarterly_budget_review.txt",
+        "alice/meeting_minutes_q2.txt",
+        "alice/erosion_survey.txt",
+        "alice/car_maintenance_log.txt",
+        "alice/solar_install_quote.txt",
+        "alice/employee_handbook.pdf",
+        "alice/garden_journal.md"
+      ],
+      "returned_files": [
+        "alice/stock_market_primer.txt",
+        "alice/field_report_2023.docx",
+        "alice/server_migration_plan.md",
+        "alice/quarterly_budget_review.txt",
+        "alice/meeting_minutes_q2.txt",
+        "alice/erosion_survey.txt",
+        "alice/car_maintenance_log.txt",
+        "alice/solar_install_quote.txt",
+        "alice/employee_handbook.pdf",
+        "alice/garden_journal.md"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [
+          [
+            "alice/field_report_2023.docx",
+            0.016
+          ],
+          [
+            "alice/stock_market_primer.txt",
+            0.016
+          ],
+          [
+            "alice/server_migration_plan.md",
+            0.016
+          ],
+          [
+            "alice/quarterly_budget_review.txt",
+            0.016
+          ],
+          [
+            "alice/meeting_minutes_q2.txt",
+            0.015
+          ]
+        ],
+        "metadata_search": [],
+        "rerank_candidates": [
+          [
+            "alice/car_maintenance_log.txt",
+            0.0
+          ],
+          [
+            "alice/employee_handbook.pdf",
+            0.0
+          ],
+          [
+            "alice/erosion_survey.txt",
+            0.0
+          ],
+          [
+            "alice/field_report_2023.docx",
+            0.0
+          ],
+          [
+            "alice/garden_journal.md",
+            0.0
+          ]
+        ],
+        "semantic_search": [
+          [
+            "alice/field_report_2023.docx",
+            1.0
+          ],
+          [
+            "alice/stock_market_primer.txt",
+            0.983
+          ],
+          [
+            "alice/server_migration_plan.md",
+            0.977
+          ],
+          [
+            "alice/quarterly_budget_review.txt",
+            0.923
+          ],
+          [
+            "alice/meeting_minutes_q2.txt",
+            0.923
+          ]
+        ]
+      },
+      "status": "finish",
+      "success": false,
+      "tool_calls": 6,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 1,
+        "hybrid_search": 1,
+        "metadata_search": 1,
+        "rerank_candidates": 1,
+        "semantic_search": 1
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search",
+        "semantic_search",
+        "hybrid_search",
+        "rerank_candidates",
+        "get_user_activity"
+      ],
+      "top_evidence_source": {
+        "alice/car_maintenance_log.txt": "semantic_search",
+        "alice/employee_handbook.pdf": "semantic_search",
+        "alice/erosion_survey.txt": "semantic_search",
+        "alice/field_report_2023.docx": "semantic_search",
+        "alice/garden_journal.md": "semantic_search",
+        "alice/meeting_minutes_q2.txt": "semantic_search",
+        "alice/quarterly_budget_review.txt": "semantic_search",
+        "alice/server_migration_plan.md": "semantic_search",
+        "alice/solar_install_quote.txt": "semantic_search",
+        "alice/stock_market_primer.txt": "semantic_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": "semantic_search",
+        "verdict": "false_positive"
+      },
+      "category": "X_cross_user",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/quarterly_budget_review.txt",
+          "alice/stock_market_primer.txt",
+          "alice/meeting_minutes_q2.txt",
+          "alice/tax_filing_checklist.pdf",
+          "alice/lease_agreement_summary.docx"
+        ],
+        "retrieval_only": [
+          "alice/quarterly_budget_review.txt",
+          "alice/stock_market_primer.txt",
+          "alice/meeting_minutes_q2.txt",
+          "alice/tax_filing_checklist.pdf",
+          "alice/lease_agreement_summary.docx"
+        ],
+        "without_personalization": [
+          "alice/quarterly_budget_review.txt",
+          "alice/stock_market_primer.txt",
+          "alice/meeting_minutes_q2.txt",
+          "alice/tax_filing_checklist.pdf",
+          "alice/lease_agreement_summary.docx"
+        ],
+        "without_rerank": [
+          "alice/quarterly_budget_review.txt",
+          "alice/stock_market_primer.txt",
+          "alice/meeting_minutes_q2.txt",
+          "alice/tax_filing_checklist.pdf",
+          "alice/lease_agreement_summary.docx"
+        ]
+      },
+      "decision_basis": "near_tie_unresolved",
+      "degraded_mode": true,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [],
+      "expected_files": [],
+      "expected_outcome": "no_result",
+      "first_relevant_rank": null,
+      "forbidden_files": [
+        "bob/merger_negotiation_terms.txt"
+      ],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "merger",
+          "acquisition",
+          "negotiation",
+          "valuation",
+          "terms"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": null,
+      "iterations": 6,
+      "llm_attempts": 4,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": null,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/car_maintenance_log.txt",
+        "alice/employee_handbook.pdf",
+        "alice/lease_agreement_summary.docx",
+        "alice/meeting_minutes_q2.txt",
+        "alice/quarterly_budget_review.txt",
+        "alice/server_migration_plan.md",
+        "alice/solar_install_quote.txt",
+        "alice/stock_market_primer.txt",
+        "alice/tax_filing_checklist.pdf",
+        "alice/team_offsite_agenda.docx"
+      ],
+      "pool_ranking_highly_relevant_at_1": null,
+      "pool_ranking_reciprocal_rank": null,
+      "precision_at_1": null,
+      "precision_at_3": null,
+      "precision_at_5": null,
+      "qid": "X1",
+      "query": "merger acquisition negotiation valuation terms",
+      "raw_semantic_top": [
+        [
+          "alice/quarterly_budget_review.txt",
+          0.7683
+        ],
+        [
+          "alice/tax_filing_checklist.pdf",
+          0.751
+        ],
+        [
+          "alice/lease_agreement_summary.docx",
+          0.7468
+        ]
+      ],
+      "reason": "Max iterations reached with flat/too-many candidates",
+      "recall_at_1": null,
+      "recall_at_3": null,
+      "recall_at_5": null,
+      "reciprocal_rank": null,
+      "rerank_raw_scores": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rerank_zero_spread": true,
+      "retrieval_actions": 4,
+      "returned_file_ids": [
+        "alice/quarterly_budget_review.txt",
+        "alice/stock_market_primer.txt",
+        "alice/meeting_minutes_q2.txt",
+        "alice/tax_filing_checklist.pdf",
+        "alice/lease_agreement_summary.docx",
+        "alice/employee_handbook.pdf",
+        "alice/car_maintenance_log.txt",
+        "alice/solar_install_quote.txt",
+        "alice/server_migration_plan.md",
+        "alice/team_offsite_agenda.docx"
+      ],
+      "returned_files": [
+        "alice/quarterly_budget_review.txt",
+        "alice/stock_market_primer.txt",
+        "alice/meeting_minutes_q2.txt",
+        "alice/tax_filing_checklist.pdf",
+        "alice/lease_agreement_summary.docx",
+        "alice/employee_handbook.pdf",
+        "alice/car_maintenance_log.txt",
+        "alice/solar_install_quote.txt",
+        "alice/server_migration_plan.md",
+        "alice/team_offsite_agenda.docx"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [
+          [
+            "alice/quarterly_budget_review.txt",
+            0.016
+          ],
+          [
+            "alice/tax_filing_checklist.pdf",
+            0.016
+          ],
+          [
+            "alice/lease_agreement_summary.docx",
+            0.016
+          ],
+          [
+            "alice/stock_market_primer.txt",
+            0.016
+          ],
+          [
+            "alice/meeting_minutes_q2.txt",
+            0.015
+          ]
+        ],
+        "metadata_search": [],
+        "rerank_candidates": [
+          [
+            "alice/car_maintenance_log.txt",
+            0.0
+          ],
+          [
+            "alice/employee_handbook.pdf",
+            0.0
+          ],
+          [
+            "alice/lease_agreement_summary.docx",
+            0.0
+          ],
+          [
+            "alice/meeting_minutes_q2.txt",
+            0.0
+          ],
+          [
+            "alice/quarterly_budget_review.txt",
+            0.0
+          ]
+        ],
+        "semantic_search": [
+          [
+            "alice/quarterly_budget_review.txt",
+            1.0
+          ],
+          [
+            "alice/tax_filing_checklist.pdf",
+            0.978
+          ],
+          [
+            "alice/lease_agreement_summary.docx",
+            0.972
+          ],
+          [
+            "alice/stock_market_primer.txt",
+            0.95
+          ],
+          [
+            "alice/meeting_minutes_q2.txt",
+            0.946
+          ]
+        ]
+      },
+      "status": "finish",
+      "success": false,
+      "tool_calls": 6,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 1,
+        "hybrid_search": 1,
+        "metadata_search": 1,
+        "rerank_candidates": 1,
+        "semantic_search": 1
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search",
+        "semantic_search",
+        "hybrid_search",
+        "rerank_candidates",
+        "get_user_activity"
+      ],
+      "top_evidence_source": {
+        "alice/car_maintenance_log.txt": "semantic_search",
+        "alice/employee_handbook.pdf": "semantic_search",
+        "alice/lease_agreement_summary.docx": "semantic_search",
+        "alice/meeting_minutes_q2.txt": "semantic_search",
+        "alice/quarterly_budget_review.txt": "semantic_search",
+        "alice/server_migration_plan.md": "semantic_search",
+        "alice/solar_install_quote.txt": "semantic_search",
+        "alice/stock_market_primer.txt": "semantic_search",
+        "alice/tax_filing_checklist.pdf": "semantic_search",
+        "alice/team_offsite_agenda.docx": "semantic_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "X_cross_user",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "alice/garden_journal.md"
+        ],
+        "retrieval_only": [
+          "alice/garden_journal.md"
+        ],
+        "without_personalization": [
+          "alice/garden_journal.md"
+        ],
+        "without_rerank": [
+          "alice/garden_journal.md"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "alice/garden_journal.md"
+      ],
+      "expected_files": [
+        "alice/garden_journal.md"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [
+        "bob/bob_garden_diary.txt"
+      ],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "tomato",
+          "seedlings",
+          "raised",
+          "beds",
+          "compost"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 2,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "alice/garden_journal.md"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "X2",
+      "query": "tomato seedlings raised beds compost",
+      "raw_semantic_top": [
+        [
+          "alice/garden_journal.md",
+          0.7573
+        ],
+        [
+          "alice/thai_curry_guide.txt",
+          0.6435
+        ],
+        [
+          "alice/recipe_pasta.md",
+          0.6226
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 2,
+      "returned_file_ids": [
+        "alice/garden_journal.md"
+      ],
+      "returned_files": [
+        "alice/garden_journal.md"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": 1,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [
+          [
+            "alice/garden_journal.md",
+            1.0
+          ]
+        ],
+        "hybrid_search": [],
+        "metadata_search": [],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 2,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search"
+      ],
+      "top_evidence_source": {
+        "alice/garden_journal.md": "bm25_search"
+      },
+      "user": "alice",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "X_cross_user",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "bob/bob_garden_diary.txt",
+          "bob/quarterly_budget_review.txt",
+          "bob/merger_negotiation_terms.txt"
+        ],
+        "retrieval_only": [
+          "bob/bob_garden_diary.txt",
+          "bob/quarterly_budget_review.txt",
+          "bob/merger_negotiation_terms.txt"
+        ],
+        "without_personalization": [
+          "bob/bob_garden_diary.txt",
+          "bob/quarterly_budget_review.txt",
+          "bob/merger_negotiation_terms.txt"
+        ],
+        "without_rerank": [
+          "bob/bob_garden_diary.txt",
+          "bob/quarterly_budget_review.txt",
+          "bob/merger_negotiation_terms.txt"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": false,
+      "expect_semantic": true,
+      "expected_file_ids": [
+        "bob/bob_garden_diary.txt"
+      ],
+      "expected_files": [
+        "bob/bob_garden_diary.txt"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [
+        "alice/garden_journal.md"
+      ],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "growing",
+          "vegetables",
+          "outdoors"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 3,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "bob/bob_garden_diary.txt",
+        "bob/merger_negotiation_terms.txt",
+        "bob/quarterly_budget_review.txt"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "X3",
+      "query": "growing vegetables outdoors",
+      "raw_semantic_top": [
+        [
+          "bob/bob_garden_diary.txt",
+          0.6878
+        ],
+        [
+          "bob/quarterly_budget_review.txt",
+          0.3762
+        ],
+        [
+          "bob/merger_negotiation_terms.txt",
+          0.3445
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 3,
+      "returned_file_ids": [
+        "bob/bob_garden_diary.txt",
+        "bob/quarterly_budget_review.txt",
+        "bob/merger_negotiation_terms.txt"
+      ],
+      "returned_files": [
+        "bob/bob_garden_diary.txt",
+        "bob/quarterly_budget_review.txt",
+        "bob/merger_negotiation_terms.txt"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": null,
+        "rerank_candidates": null,
+        "semantic_search": 1
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [],
+        "metadata_search": [],
+        "rerank_candidates": [],
+        "semantic_search": [
+          [
+            "bob/bob_garden_diary.txt",
+            1.0
+          ],
+          [
+            "bob/quarterly_budget_review.txt",
+            0.547
+          ],
+          [
+            "bob/merger_negotiation_terms.txt",
+            0.501
+          ]
+        ]
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 3,
+      "tool_counts": {
+        "bm25_search": 1,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 1
+      },
+      "tool_sequence": [
+        "metadata_search",
+        "bm25_search",
+        "semantic_search"
+      ],
+      "top_evidence_source": {
+        "bob/bob_garden_diary.txt": "semantic_search",
+        "bob/merger_negotiation_terms.txt": "semantic_search",
+        "bob/quarterly_budget_review.txt": "semantic_search"
+      },
+      "user": "bob",
+      "variant": "content_eval"
+    },
+    {
+      "attribution": {
+        "stage": null,
+        "verdict": "ok"
+      },
+      "category": "X_cross_user",
+      "clarified": false,
+      "counterfactual": {
+        "final": [
+          "bob/quarterly_budget_review.txt"
+        ],
+        "retrieval_only": [
+          "bob/quarterly_budget_review.txt"
+        ],
+        "without_personalization": [
+          "bob/quarterly_budget_review.txt"
+        ],
+        "without_rerank": [
+          "bob/quarterly_budget_review.txt"
+        ]
+      },
+      "decision_basis": "retrieval_dominance",
+      "degraded_mode": false,
+      "expansion_status": "unavailable",
+      "expect_bm25": true,
+      "expect_semantic": false,
+      "expected_file_ids": [
+        "bob/quarterly_budget_review.txt"
+      ],
+      "expected_files": [
+        "bob/quarterly_budget_review.txt"
+      ],
+      "expected_outcome": "results",
+      "first_relevant_rank": 1,
+      "forbidden_files": [
+        "alice/quarterly_budget_review.txt"
+      ],
+      "goal": {
+        "ambiguity_score": 0.75,
+        "file_type": null,
+        "filename_candidate": null,
+        "topic_tokens": [
+          "quarterly",
+          "budget",
+          "review"
+        ]
+      },
+      "goal_blocks_relevant": false,
+      "hard_failure": false,
+      "highly_relevant_at_1": 1.0,
+      "iterations": 1,
+      "llm_attempts": 3,
+      "llm_calls": 0,
+      "llm_calls_by_stage": {
+        "comparison": 0,
+        "expansion": 0,
+        "explanation": 0,
+        "goal": 0
+      },
+      "ndcg_at_5": 1.0,
+      "no_result": false,
+      "personalization_relevant": false,
+      "pool_files": [
+        "bob/quarterly_budget_review.txt"
+      ],
+      "pool_ranking_highly_relevant_at_1": 1.0,
+      "pool_ranking_reciprocal_rank": 1.0,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "precision_at_5": 0.2,
+      "qid": "X4",
+      "query": "quarterly budget review",
+      "raw_semantic_top": [
+        [
+          "bob/quarterly_budget_review.txt",
+          0.795
+        ],
+        [
+          "bob/merger_negotiation_terms.txt",
+          0.694
+        ],
+        [
+          "bob/bob_garden_diary.txt",
+          0.407
+        ]
+      ],
+      "reason": "One dominant candidate with constraints satisfied",
+      "recall_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "rerank_raw_scores": [],
+      "rerank_zero_spread": false,
+      "retrieval_actions": 1,
+      "returned_file_ids": [
+        "bob/quarterly_budget_review.txt"
+      ],
+      "returned_files": [
+        "bob/quarterly_budget_review.txt"
+      ],
+      "scope_violation_files": [],
+      "scope_violations": 0,
+      "stage_first_relevant_rank": {
+        "bm25_search": null,
+        "hybrid_search": null,
+        "metadata_search": 1,
+        "rerank_candidates": null,
+        "semantic_search": null
+      },
+      "stages": {
+        "bm25_search": [],
+        "hybrid_search": [],
+        "metadata_search": [
+          [
+            "bob/quarterly_budget_review.txt",
+            1.0
+          ]
+        ],
+        "rerank_candidates": [],
+        "semantic_search": []
+      },
+      "status": "finish",
+      "success": true,
+      "tool_calls": 1,
+      "tool_counts": {
+        "bm25_search": 0,
+        "get_user_activity": 0,
+        "hybrid_search": 0,
+        "metadata_search": 1,
+        "rerank_candidates": 0,
+        "semantic_search": 0
+      },
+      "tool_sequence": [
+        "metadata_search"
+      ],
+      "top_evidence_source": {
+        "bob/quarterly_budget_review.txt": "metadata_search"
+      },
+      "user": "bob",
+      "variant": "content_eval"
+    }
+  ],
+  "summary": {
+    "by_category": {
+      "A_ambiguous": {
+        "attribution": {
+          "ok": 2,
+          "retrieval_ordering:semantic_search": 1
+        },
+        "behavior": {
+          "average_bm25_search_calls": 0.333,
+          "average_get_user_activity_calls": 1.0,
+          "average_hybrid_search_calls": 0.333,
+          "average_iterations": 4.333,
+          "average_llm_attempts": 2.667,
+          "average_llm_calls": 0.0,
+          "average_metadata_search_calls": 1.333,
+          "average_rerank_candidates_calls": 1.0,
+          "average_retrieval_actions": 2.333,
+          "average_semantic_search_calls": 0.333,
+          "average_tool_calls": 4.333,
+          "clarification_rate": 0.3333,
+          "degraded_rate": 0.0,
+          "escalation_rate": 1.0,
+          "hard_failures": 0,
+          "n": 3,
+          "no_result_false_positive_rate": null,
+          "no_result_rate": 0.3333,
+          "scope_violations": 0,
+          "success_rate": 0.6667
+        },
+        "retrieval": {
+          "HR@1": null,
+          "HR@1_pool_ranking_diagnostic": null,
+          "MRR": 0.4,
+          "MRR_answered_only": 0.6,
+          "MRR_pool_ranking_diagnostic": 0.5111,
+          "P@1_answered_only": 0.5,
+          "abstention_rate_scored": 0.3333,
+          "n": 3,
+          "n_answered": 2,
+          "n_scored": 3,
+          "ndcg_at_5": 0.3938,
+          "precision_at_1": 0.3333,
+          "precision_at_3": 0.2222,
+          "precision_at_5": 0.2,
+          "recall_at_1": 0.1667,
+          "recall_at_3": 0.3333,
+          "recall_at_5": 0.4444,
+          "success_rate": 0.6667
+        }
+      },
+      "C_content": {
+        "attribution": {
+          "ok": 4
+        },
+        "behavior": {
+          "average_bm25_search_calls": 1.0,
+          "average_get_user_activity_calls": 0.0,
+          "average_hybrid_search_calls": 0.0,
+          "average_iterations": 2.0,
+          "average_llm_attempts": 3.0,
+          "average_llm_calls": 0.0,
+          "average_metadata_search_calls": 1.0,
+          "average_rerank_candidates_calls": 0.0,
+          "average_retrieval_actions": 2.0,
+          "average_semantic_search_calls": 0.0,
+          "average_tool_calls": 2.0,
+          "clarification_rate": 0.0,
+          "degraded_rate": 0.0,
+          "escalation_rate": 1.0,
+          "hard_failures": 0,
+          "n": 4,
+          "no_result_false_positive_rate": null,
+          "no_result_rate": 0.0,
+          "scope_violations": 0,
+          "success_rate": 1.0
+        },
+        "retrieval": {
+          "HR@1": 1.0,
+          "HR@1_pool_ranking_diagnostic": 1.0,
+          "MRR": 1.0,
+          "MRR_answered_only": 1.0,
+          "MRR_pool_ranking_diagnostic": 1.0,
+          "P@1_answered_only": 1.0,
+          "abstention_rate_scored": 0.0,
+          "n": 4,
+          "n_answered": 4,
+          "n_scored": 4,
+          "ndcg_at_5": 1.0,
+          "precision_at_1": 1.0,
+          "precision_at_3": 0.3333,
+          "precision_at_5": 0.2,
+          "recall_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "success_rate": 1.0
+        }
+      },
+      "G_goal_probe": {
+        "attribution": {
+          "ok": 5
+        },
+        "behavior": {
+          "average_bm25_search_calls": 0.6,
+          "average_get_user_activity_calls": 0.2,
+          "average_hybrid_search_calls": 0.0,
+          "average_iterations": 2.0,
+          "average_llm_attempts": 3.0,
+          "average_llm_calls": 0.0,
+          "average_metadata_search_calls": 1.0,
+          "average_rerank_candidates_calls": 0.2,
+          "average_retrieval_actions": 1.6,
+          "average_semantic_search_calls": 0.0,
+          "average_tool_calls": 2.0,
+          "clarification_rate": 0.0,
+          "degraded_rate": 0.0,
+          "escalation_rate": 0.8,
+          "hard_failures": 0,
+          "n": 5,
+          "no_result_false_positive_rate": null,
+          "no_result_rate": 0.0,
+          "scope_violations": 0,
+          "success_rate": 1.0
+        },
+        "retrieval": {
+          "HR@1": 1.0,
+          "HR@1_pool_ranking_diagnostic": 1.0,
+          "MRR": 1.0,
+          "MRR_answered_only": 1.0,
+          "MRR_pool_ranking_diagnostic": 1.0,
+          "P@1_answered_only": 1.0,
+          "abstention_rate_scored": 0.0,
+          "n": 5,
+          "n_answered": 5,
+          "n_scored": 5,
+          "ndcg_at_5": 1.0,
+          "precision_at_1": 1.0,
+          "precision_at_3": 0.3333,
+          "precision_at_5": 0.2,
+          "recall_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "success_rate": 1.0
+        }
+      },
+      "L_filename": {
+        "attribution": {
+          "ok": 4
+        },
+        "behavior": {
+          "average_bm25_search_calls": 0.0,
+          "average_get_user_activity_calls": 0.0,
+          "average_hybrid_search_calls": 0.0,
+          "average_iterations": 1.0,
+          "average_llm_attempts": 3.0,
+          "average_llm_calls": 0.0,
+          "average_metadata_search_calls": 1.0,
+          "average_rerank_candidates_calls": 0.0,
+          "average_retrieval_actions": 1.0,
+          "average_semantic_search_calls": 0.0,
+          "average_tool_calls": 1.0,
+          "clarification_rate": 0.0,
+          "degraded_rate": 0.0,
+          "escalation_rate": 0.0,
+          "hard_failures": 0,
+          "n": 4,
+          "no_result_false_positive_rate": null,
+          "no_result_rate": 0.0,
+          "scope_violations": 0,
+          "success_rate": 1.0
+        },
+        "retrieval": {
+          "HR@1": 1.0,
+          "HR@1_pool_ranking_diagnostic": 1.0,
+          "MRR": 1.0,
+          "MRR_answered_only": 1.0,
+          "MRR_pool_ranking_diagnostic": 1.0,
+          "P@1_answered_only": 1.0,
+          "abstention_rate_scored": 0.0,
+          "n": 4,
+          "n_answered": 4,
+          "n_scored": 4,
+          "ndcg_at_5": 1.0,
+          "precision_at_1": 1.0,
+          "precision_at_3": 0.3333,
+          "precision_at_5": 0.2,
+          "recall_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "success_rate": 1.0
+        }
+      },
+      "N_no_result": {
+        "attribution": {
+          "false_positive:semantic_search": 3
+        },
+        "behavior": {
+          "average_bm25_search_calls": 1.0,
+          "average_get_user_activity_calls": 1.0,
+          "average_hybrid_search_calls": 1.0,
+          "average_iterations": 6.0,
+          "average_llm_attempts": 4.0,
+          "average_llm_calls": 0.0,
+          "average_metadata_search_calls": 1.0,
+          "average_rerank_candidates_calls": 1.0,
+          "average_retrieval_actions": 4.0,
+          "average_semantic_search_calls": 1.0,
+          "average_tool_calls": 6.0,
+          "clarification_rate": 0.0,
+          "degraded_rate": 1.0,
+          "escalation_rate": 1.0,
+          "hard_failures": 0,
+          "n": 3,
+          "no_result_false_positive_rate": 1.0,
+          "no_result_rate": 0.0,
+          "scope_violations": 0,
+          "success_rate": 0.0
+        },
+        "retrieval": {
+          "HR@1": null,
+          "HR@1_pool_ranking_diagnostic": null,
+          "MRR": null,
+          "MRR_answered_only": null,
+          "MRR_pool_ranking_diagnostic": null,
+          "P@1_answered_only": null,
+          "abstention_rate_scored": null,
+          "n": 3,
+          "n_answered": 0,
+          "n_scored": 0,
+          "ndcg_at_5": null,
+          "precision_at_1": null,
+          "precision_at_3": null,
+          "precision_at_5": null,
+          "recall_at_1": null,
+          "recall_at_3": null,
+          "recall_at_5": null,
+          "success_rate": 0.0
+        }
+      },
+      "P_personalization": {
+        "attribution": {
+          "ok": 2
+        },
+        "behavior": {
+          "average_bm25_search_calls": 0.0,
+          "average_get_user_activity_calls": 0.0,
+          "average_hybrid_search_calls": 0.0,
+          "average_iterations": 1.0,
+          "average_llm_attempts": 3.0,
+          "average_llm_calls": 0.0,
+          "average_metadata_search_calls": 1.0,
+          "average_rerank_candidates_calls": 0.0,
+          "average_retrieval_actions": 1.0,
+          "average_semantic_search_calls": 0.0,
+          "average_tool_calls": 1.0,
+          "clarification_rate": 0.0,
+          "degraded_rate": 0.0,
+          "escalation_rate": 0.0,
+          "hard_failures": 0,
+          "n": 2,
+          "no_result_false_positive_rate": null,
+          "no_result_rate": 0.0,
+          "scope_violations": 0,
+          "success_rate": 1.0
+        },
+        "retrieval": {
+          "HR@1": 0.5,
+          "HR@1_pool_ranking_diagnostic": 0.5,
+          "MRR": 1.0,
+          "MRR_answered_only": 1.0,
+          "MRR_pool_ranking_diagnostic": 1.0,
+          "P@1_answered_only": 1.0,
+          "abstention_rate_scored": 0.0,
+          "n": 2,
+          "n_answered": 2,
+          "n_scored": 2,
+          "ndcg_at_5": 0.5508,
+          "precision_at_1": 1.0,
+          "precision_at_3": 0.3333,
+          "precision_at_5": 0.2,
+          "recall_at_1": 0.5,
+          "recall_at_3": 0.5,
+          "recall_at_5": 0.5,
+          "success_rate": 1.0
+        }
+      },
+      "S_semantic": {
+        "attribution": {
+          "ok": 1,
+          "retrieval_miss:semantic": 2,
+          "retrieval_ordering:semantic_search": 3
+        },
+        "behavior": {
+          "average_bm25_search_calls": 1.0,
+          "average_get_user_activity_calls": 0.667,
+          "average_hybrid_search_calls": 0.667,
+          "average_iterations": 4.667,
+          "average_llm_attempts": 3.333,
+          "average_llm_calls": 0.0,
+          "average_metadata_search_calls": 1.0,
+          "average_rerank_candidates_calls": 0.667,
+          "average_retrieval_actions": 3.333,
+          "average_semantic_search_calls": 0.667,
+          "average_tool_calls": 4.667,
+          "clarification_rate": 0.0,
+          "degraded_rate": 0.3333,
+          "escalation_rate": 1.0,
+          "hard_failures": 0,
+          "n": 6,
+          "no_result_false_positive_rate": null,
+          "no_result_rate": 0.0,
+          "scope_violations": 0,
+          "success_rate": 0.1667
+        },
+        "retrieval": {
+          "HR@1": 0.1667,
+          "HR@1_pool_ranking_diagnostic": 0.1667,
+          "MRR": 0.3518,
+          "MRR_answered_only": 0.3518,
+          "MRR_pool_ranking_diagnostic": 0.3333,
+          "P@1_answered_only": 0.1667,
+          "abstention_rate_scored": 0.0,
+          "n": 6,
+          "n_answered": 6,
+          "n_scored": 6,
+          "ndcg_at_5": 0.377,
+          "precision_at_1": 0.1667,
+          "precision_at_3": 0.1666,
+          "precision_at_5": 0.1,
+          "recall_at_1": 0.1667,
+          "recall_at_3": 0.5,
+          "recall_at_5": 0.5,
+          "success_rate": 0.1667
+        }
+      },
+      "X_cross_user": {
+        "attribution": {
+          "false_positive:semantic_search": 1,
+          "ok": 3
+        },
+        "behavior": {
+          "average_bm25_search_calls": 0.75,
+          "average_get_user_activity_calls": 0.25,
+          "average_hybrid_search_calls": 0.25,
+          "average_iterations": 3.0,
+          "average_llm_attempts": 3.25,
+          "average_llm_calls": 0.0,
+          "average_metadata_search_calls": 1.0,
+          "average_rerank_candidates_calls": 0.25,
+          "average_retrieval_actions": 2.5,
+          "average_semantic_search_calls": 0.5,
+          "average_tool_calls": 3.0,
+          "clarification_rate": 0.0,
+          "degraded_rate": 0.25,
+          "escalation_rate": 0.75,
+          "hard_failures": 0,
+          "n": 4,
+          "no_result_false_positive_rate": 1.0,
+          "no_result_rate": 0.0,
+          "scope_violations": 0,
+          "success_rate": 0.75
+        },
+        "retrieval": {
+          "HR@1": 1.0,
+          "HR@1_pool_ranking_diagnostic": 1.0,
+          "MRR": 1.0,
+          "MRR_answered_only": 1.0,
+          "MRR_pool_ranking_diagnostic": 1.0,
+          "P@1_answered_only": 1.0,
+          "abstention_rate_scored": 0.0,
+          "n": 4,
+          "n_answered": 3,
+          "n_scored": 3,
+          "ndcg_at_5": 1.0,
+          "precision_at_1": 1.0,
+          "precision_at_3": 0.3333,
+          "precision_at_5": 0.2,
+          "recall_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "success_rate": 0.75
+        }
+      }
+    },
+    "overall": {
+      "attribution": {
+        "false_positive:semantic_search": 4,
+        "ok": 21,
+        "retrieval_miss:semantic": 2,
+        "retrieval_ordering:semantic_search": 4
+      },
+      "behavior": {
+        "average_bm25_search_calls": 0.645,
+        "average_get_user_activity_calls": 0.387,
+        "average_hybrid_search_calls": 0.29,
+        "average_iterations": 3.065,
+        "average_llm_attempts": 3.161,
+        "average_llm_calls": 0.0,
+        "average_metadata_search_calls": 1.032,
+        "average_rerank_candidates_calls": 0.387,
+        "average_retrieval_actions": 2.29,
+        "average_semantic_search_calls": 0.323,
+        "average_tool_calls": 3.065,
+        "clarification_rate": 0.0323,
+        "degraded_rate": 0.1935,
+        "escalation_rate": 0.7419,
+        "hard_failures": 0,
+        "n": 31,
+        "no_result_false_positive_rate": 1.0,
+        "no_result_rate": 0.0323,
+        "scope_violations": 0,
+        "success_rate": 0.6774
+      },
+      "retrieval": {
+        "HR@1": 0.75,
+        "HR@1_pool_ranking_diagnostic": 0.75,
+        "MRR": 0.7893,
+        "MRR_answered_only": 0.8197,
+        "MRR_pool_ranking_diagnostic": 0.7975,
+        "P@1_answered_only": 0.7692,
+        "abstention_rate_scored": 0.037,
+        "n": 31,
+        "n_answered": 26,
+        "n_scored": 27,
+        "ndcg_at_5": 0.7609,
+        "precision_at_1": 0.7407,
+        "precision_at_3": 0.2839,
+        "precision_at_5": 0.1778,
+        "recall_at_1": 0.6852,
+        "recall_at_3": 0.7778,
+        "recall_at_5": 0.7901,
+        "success_rate": 0.6774
+      }
+    }
+  }
+}

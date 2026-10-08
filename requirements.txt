@@ -1,0 +1,31 @@
+bm25s==0.3.11
+numpy==2.4.4
+qdrant-client==1.19.1
+# Primary/production embedding provider (app/embeddings.py). Requires
+# network access to huggingface.co (or a pre-populated local HF cache) to
+# fetch BAAI/bge-small-en-v1.5 on first use.
+sentence-transformers==6.1.0
+# Offline fallback embedding provider used automatically when
+# sentence-transformers/HF is unreachable -- see app/embeddings.py's
+# module docstring ("SANDBOX DEVIATION") for why this is here. Safe to
+# omit in an environment with real HF access; get_provider() degrades
+# gracefully either way.
+spacy==3.8.16
+# en_core_web_md must be installed separately (it's a data package, not a
+# PyPI dependency of spacy itself), e.g.:
+#   pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.8.0/en_core_web_md-3.8.0-py3-none-any.whl
+langchain-core==1.6.4
+langchain-protocol==0.0.19
+langgraph==1.2.12
+langgraph-checkpoint==4.2.0
+langgraph-prebuilt==1.1.0
+langgraph-sdk==0.4.5
+psycopg2-binary==2.9.13
+pydantic==2.13.5
+pydantic_core==2.46.5
+pytest==9.1.1
+# Phase 10 local-file ingestion: content extraction for .pdf and .docx (.txt/.md need nothing).
+# Imported lazily by app/ingestion/extract.py; if absent, those formats report
+# failed("extractor_unavailable") instead of crashing the run.
+pypdf==5.9.0
+python-docx==1.2.0

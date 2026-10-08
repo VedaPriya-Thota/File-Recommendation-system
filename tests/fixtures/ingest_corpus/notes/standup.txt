@@ -1,0 +1,1 @@
+Daily standup: the deployment pipeline was slow yesterday. Nobody is blocked today.
