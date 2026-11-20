@@ -31,3 +31,15 @@ def normalize_text(text) -> str:
     text = _AROUND_NL.sub("\n", text)
     text = _BLANKS.sub("\n\n", text)
     return text.strip()
+
+
+def normalize_code(text) -> str:
+    """Source-code variant: keeps indentation and blank lines (so reported line numbers match the real file);
+    only unifies line endings, strips control/zero-width characters and trailing whitespace."""
+    if not text:
+        return ""
+    text = str(text).replace("\r\n", "\n").replace("\r", "\n")
+    text = _ZERO_WIDTH.sub("", text)
+    text = _CONTROL.sub("", text)
+    text = "\n".join(line.rstrip() for line in text.split("\n"))
+    return text.strip("\n") if text.strip() else ""

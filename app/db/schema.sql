@@ -125,6 +125,8 @@ CREATE TABLE file_ingestion_state (
     chunk_count        INTEGER NOT NULL DEFAULT 0,
     indexed_at         TIMESTAMPTZ,
     updated_at         TIMESTAMPTZ NOT NULL DEFAULT now(),
-    UNIQUE (owner_id, rel_path)
+    folder_id          INTEGER,
+    meta_json          TEXT NOT NULL DEFAULT '{}',
+    duplicate_of       INTEGER
 );
 CREATE INDEX idx_ingestion_state_owner ON file_ingestion_state (owner_id);

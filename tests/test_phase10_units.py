@@ -78,7 +78,7 @@ def test_empty_whitespace_only_and_unsupported_and_failures_are_distinct_statuse
     assert ex.extract("txt", b"").status == "empty"
     assert ex.extract("md", b"  \n\t \r\n ").status == "empty"
     assert ex.extract("xyz", b"data").status == "unsupported"
-    assert ex.extract("pptx", b"data").status == "unsupported"  # deliberately out of scope
+    assert ex.extract("ppt", b"data").status == "unsupported"  # legacy binary Office format
     bad_pdf, bad_docx = ex.extract("pdf", b"%PDF-garbage"), ex.extract("docx", b"not a zip")
     assert (bad_pdf.status, bad_pdf.error_code) == ("failed", "malformed_pdf")
     assert (bad_docx.status, bad_docx.error_code) == ("failed", "malformed_docx")

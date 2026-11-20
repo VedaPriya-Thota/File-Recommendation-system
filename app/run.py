@@ -53,13 +53,25 @@ def run_query(
     max_iterations: Optional[int] = None,
     registry=None,
     llm_provider=None,
+    on_trace=None,
 ) -> dict:
     max_iterations = max_iterations if max_iterations is not None else MAX_ITERATIONS
     graph = build_graph(registry=registry, max_iterations=max_iterations, llm_provider=llm_provider)
     initial_state = _initial_state(user_id, raw_query, max_iterations)
 
     try:
-        final_state = graph.invoke(initial_state, config={"recursion_limit": 100})
+        if on_trace is None:
+            final_state = graph.invoke(initial_state, config={"recursion_limit": 100})
+        else:  # same graph, streamed: every new trace entry is reported the moment its node finishes
+            final_state, seen = initial_state, 0
+            for final_state in graph.stream(initial_state, config={"recursion_limit": 100}, stream_mode="values"):
+                trace = final_state.get("trace", [])
+                for entry in trace[seen:]:
+                    try:
+                        on_trace(entry)
+                    except Exception:  # noqa: BLE001 -- a UI hook must never break the agent
+                        pass
+                seen = len(trace)
     except (DatabaseError, UnknownUserError) as exc:
         # Hard failures (architecture_final.md §7/§11/§14): never degrade,
         # never silently swallow -- surface clearly.

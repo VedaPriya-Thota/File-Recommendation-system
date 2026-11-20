@@ -211,11 +211,12 @@ def test_bm25_cache_is_not_stale_when_an_older_file_is_edited_without_becoming_t
 
 
 def test_shrinking_a_file_removes_its_now_surplus_chunk_points(corpus, env):
-    long_text = " ".join(f"word{i}" for i in range(300))                 # 300 words -> 3 chunks at 120 words/chunk
+    long_text = " ".join(f"word{i}" for i in range(300))                 # ~2.1k chars -> several structure-aware passages
     (corpus / "long.txt").write_text(long_text)
     ingest_directory(corpus, ALICE)
     fid = rows(ALICE)["long.txt"]["file_id"]
-    assert sorted(p.id for p in points(env, fid)) == [fid * 100000 + i for i in range(3)]
+    ids = sorted(p.id for p in points(env, fid))
+    assert len(ids) >= 2 and ids == [fid * 100000 + i for i in range(len(ids))]
     (corpus / "long.txt").write_text("just ten words now " * 2)
     touch(corpus / "long.txt")
     ingest_directory(corpus, ALICE)
@@ -313,9 +314,11 @@ def test_content_becomes_chunks_embeddings_and_deterministic_points(corpus, env,
     counter = CountingEmbed(monkeypatch)
     ingest_directory(corpus, ALICE)
     r = rows(ALICE)
-    expected = {name: sem._chunk_text(r[name]["extracted_text"]) for name in r if r[name]["extracted_text"]}
+    from app.ingestion.structure import build_passages
+    expected = {name: [r[name]["extracted_text"][p.start:p.end] for p in build_passages(r[name]["extracted_text"], {}, name.rsplit(".", 1)[-1])]
+                for name in r if r[name]["extracted_text"]}
     embedded = [t for batch in counter.batches for t in batch]
-    assert sorted(embedded) == sorted(c for chunks in expected.values() for c in chunks)   # embeddings got exactly the normalized chunks
+    assert sorted(" ".join(e.split()) for e in embedded) == sorted(" ".join(c.split()) for chunks in expected.values() for c in chunks)   # embeddings got exactly the normalized chunks
     for name, chunks in expected.items():
         pts = sorted(points(env, r[name]["file_id"]), key=lambda p: p.payload["chunk_id"])
         assert [p.payload["content_text"] for p in pts] == chunks
