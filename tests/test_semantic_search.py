@@ -23,7 +23,9 @@ from app.vectorstore import get_client, QDRANT_COLLECTION
 QUERY = "steps to roll back a broken kubernetes deployment and alert whoever is on call"
 CHUNK_QUERY = "guidance for rolling back a failing app deployment to an earlier version and notifying whoever is on duty"
 
-FILLER = ("unrelated placeholder padding word " * 30).strip()  # exactly 120 words -> fills chunk 0 exactly
+# Filler as its own paragraphs (structure-aware chunking keeps a paragraph's sentences together and splits
+# long text at paragraph boundaries), long enough that it cannot share a passage with the relevant text.
+FILLER = "\n\n".join(("unrelated placeholder padding word " * 40).strip() + "." for _ in range(2))
 
 EXTRA_FILES = [
     dict(

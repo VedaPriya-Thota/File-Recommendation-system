@@ -1,5 +1,55 @@
 # Project 5 — Agentic AI-based Intelligent File Discovery
 
+## Run the application (local web app)
+
+```bash
+pip install -r requirements.txt
+cd frontend && npm install && npm run build && cd ..     # once (re-run after UI changes)
+python api_server.py                                      # -> http://127.0.0.1:8000
+```
+
+Open http://127.0.0.1:8000, go to **Connected Folders → Connect folder**, pick a directory, and wait for indexing to
+finish. Then use **AI Assistant** / **Recommendations**. Frontend dev mode: `python api_server.py` + `cd frontend && npm run dev` (http://localhost:5173).
+
+* **Storage**: SQLite + local Qdrant under `./data` (override with `DISCOVERY_DATA_DIR`). Set `DISCOVERY_DB_TYPE=postgres`
+  (plus the existing `DISCOVERY_PG_*` variables in `app/config.py`) to use PostgreSQL instead. Original `file_discovery.db` is untouched.
+* **Privacy**: the server only listens on 127.0.0.1, only reads folders you connect, never writes to your files, and sends nothing
+  to any external service unless you choose an external model **and** consent in Settings → Privacy. Local models (Ollama/LM Studio via
+  “OpenAI-compatible”, e.g. `http://localhost:11434/v1`) need no consent.
+* **Optional model** (answer writing; everything else works without it): `export ANTHROPIC_API_KEY=...` and select it in Settings,
+  or run Ollama locally. **Semantic search** needs `sentence-transformers` (in requirements; downloads `BAAI/bge-small-en-v1.5` once). Without
+  it the app falls back to a hashing embedding, which is *not* semantic — the UI says so and only trusts keyword evidence.
+* **Tests**: `python -m pytest tests` (temporary SQLite; PostgreSQL-only legacy tests are skipped unless `DISCOVERY_DB_TYPE=postgres`) and
+  `cd frontend && VITE_API_BASE=http://127.0.0.1:8000 npx vitest run` (UI smoke tests against a running server with a folder connected).
+
+### How answers are produced (grounded Q&A)
+
+Plan the question (fact / summary / comparison / calculation / code / multi-file; follow-ups reuse the previous answer's files) → passage-level
+retrieval (BM25 + semantic when installed, fused and reranked; page / section / line metadata kept) → evidence check (term coverage + answer-type
+check; otherwise it says it could not find the answer) → calculations in Python for CSV/Excel → optional single LLM call to phrase the answer →
+sentence-level verification against the cited passages (unsupported claims are dropped) → numbered sources with excerpts.
+Accuracy suite: `python -m pytest tests/test_answer_quality.py`. Files indexed by an older version are re-chunked automatically on the next scan.
+
+### Multi-agent architecture (`app/agents/`)
+
+A request is handled by a LangGraph-driven **Orchestrator** that plans in stages, hands structured results between specialised agents
+through a shared board (file ids, evidence offsets, findings, never whole documents), and only starts the agents the task needs.
+
+| Agent | Responsibility | Tools it may call |
+|---|---|---|
+| Orchestrator | classify the task, plan (stage 1: discovery; stage 2: tasks created from what was found), route on results, bounded re-planning (max 2 rounds), parallel scheduling, retries (max 1 per task) | none |
+| File Discovery | which files matter (names, content, tables, projects, related files, the original LangGraph search agent) | search_files, search_contents, agent_search, find_related, list_project, match_tables, get_metadata |
+| Retrieval | the specific passages / pages / structures with offsets and locations; widens its own search when coverage is poor | search_contents, read_section, read_table, extract_html_structure, read_code_outline, read_config |
+| Analysis | summaries, HTML explanation, comparison, real spreadsheet calculations, code tracing across files, resume review (no language model) | summarize_document, analyze_table, compare_documents, trace_workflow, review_resume, rank_sentences |
+| Verification | sufficiency of evidence, cited spans, conflicts between sources, independent re-computation of numbers, draft checking; can send Retrieval back out | check_sufficiency, verify_claims, detect_conflicts, recompute_calc, verify_text |
+| Response | plain-English answer from verified findings, sources, limitations; at most ONE optional model call | the language model |
+
+The UI's **Agent activity** panel renders the real event stream (agent, tool, status, timing, cache hits, plan). Evaluate the architecture with
+`python -m evaluation.agentic.harness` (agents selected, tools used, model calls, cache hits, rounds, parallel batches, seconds, grounding) and
+`python -m pytest tests/test_agentic_architecture.py tests/test_answer_quality.py`.
+
+---
+
 A natural-language file-discovery agent. Given a goal, a bounded LangGraph loop chooses a retrieval
 strategy, observes what it returned, and changes strategy mid-query (replan / finish / clarify). Retrieval,
 scoring and access control are deterministic; LLMs are optional, narrow, and never mandatory.

@@ -51,6 +51,7 @@ Index lifecycle:
     build only if the collection is empty, so a normal query never pays
     an unnecessary rebuild.
 """
+import json
 import logging
 from typing import Dict, List, Optional
 
@@ -89,9 +90,9 @@ def _fetch_all_files_for_indexing() -> List[dict]:
     with get_cursor() as cur:
         cur.execute(
             """
-            SELECT file_id, filename, file_type, owner_id, updated_at, extracted_text
-            FROM files
-            ORDER BY file_id;
+            SELECT f.file_id, f.filename, f.file_type, f.owner_id, f.updated_at, f.extracted_text, s.meta_json
+            FROM files f LEFT JOIN file_ingestion_state s ON s.file_id = f.file_id
+            ORDER BY f.file_id;
             """
         )
         return [dict(row) for row in cur.fetchall()]
@@ -103,12 +104,20 @@ MAX_CHUNKS_PER_FILE = 100000  # point ids are file_id * 100000 + chunk_id; more 
 def _points_for_row(row: dict) -> List[PointStruct]:
     """The ONE place a file's chunks become Qdrant points (used by both the
     global rebuild and per-file ingestion). Empty text -> [] (never embedded)."""
-    chunks = _chunk_text(row.get("extracted_text"))
+    from app.ingestion.structure import build_passages
+    text = row.get("extracted_text") or ""
+    try:
+        meta = json.loads(row.get("meta_json") or "{}")
+    except ValueError:
+        meta = {}
+    passages = build_passages(text, meta, row.get("file_type") or "")
+    chunks = [text[p.start:p.end] for p in passages]        # structure-aware passages (see ingestion/structure.py)
     if not chunks:
         return []
     if len(chunks) >= MAX_CHUNKS_PER_FILE:
         raise ValueError("too many chunks for deterministic point ids")
-    vectors = embed_texts(chunks)
+    # the heading is part of what the vector represents, but the stored text stays the verbatim slice
+    vectors = embed_texts([(f"{p.heading}\n{c}" if p.heading and not c.lstrip().startswith(("#", p.heading[:20])) else c) for p, c in zip(passages, chunks)])
     updated_at_ts = row["updated_at"].timestamp()
     return [
         PointStruct(
@@ -122,6 +131,7 @@ def _points_for_row(row: dict) -> List[PointStruct]:
                 "file_type": row["file_type"],
                 "content_text": chunk_text,
                 "updated_at_ts": updated_at_ts,
+                **passages[chunk_id].to_payload(),
             },
         )
         for chunk_id, (chunk_text, vector) in enumerate(zip(chunks, vectors))
@@ -148,7 +158,8 @@ def index_file(file_id: int) -> int:
     delete_file_points(file_id)
     with get_cursor() as cur:
         cur.execute(
-            "SELECT file_id, filename, file_type, owner_id, updated_at, extracted_text FROM files WHERE file_id = %s;",
+            """SELECT f.file_id, f.filename, f.file_type, f.owner_id, f.updated_at, f.extracted_text, s.meta_json
+               FROM files f LEFT JOIN file_ingestion_state s ON s.file_id = f.file_id WHERE f.file_id = %s;""",
             (file_id,),
         )
         row = cur.fetchone()
@@ -157,6 +168,57 @@ def index_file(file_id: int) -> int:
     points = _points_for_row(dict(row))
     if points:
         get_client().upsert(QDRANT_COLLECTION, points=points)
+    return len(points)
+
+
+def search_chunks(query: str, owner_ids, limit: int = 40, file_ids=None) -> List[dict]:
+    """Chunk-level dense search (no file aggregation): [{file_id, chunk_id, score, start, end}]. Scoped by owner
+    (and optionally by file ids) inside Qdrant; callers re-check scope against the database."""
+    if not (query or "").strip():
+        return []
+    _ensure_index_ready()
+    [vec] = embed_texts([query])
+    must = [FieldCondition(key="owner_id", match=MatchAny(any=list(owner_ids)))]
+    if file_ids:
+        must.append(FieldCondition(key="file_id", match=MatchAny(any=list(file_ids))))
+    hits = get_client().query_points(QDRANT_COLLECTION, query=vec, query_filter=Filter(must=must), limit=limit).points
+    return [{"file_id": h.payload["file_id"], "chunk_id": h.payload["chunk_id"], "score": float(h.score),
+             "start": h.payload.get("start"), "end": h.payload.get("end")} for h in hits]
+
+
+def update_file_payload(file_id: int, **fields) -> None:
+    """Refresh display payload (filename/file_type) of a file's points after a rename/move; no re-embedding."""
+    ensure_collection()
+    get_client().set_payload(
+        QDRANT_COLLECTION, payload=fields,
+        points=Filter(must=[FieldCondition(key="file_id", match=MatchValue(value=file_id))]),
+    )
+
+
+def clone_file_points(src_file_id: int, dst_file_id: int) -> int:
+    """Copy a byte-identical twin's vectors to another file id (no embedding model call). Returns the chunk
+    count (0 if the source has no points)."""
+    ensure_collection()
+    client = get_client()
+    delete_file_points(dst_file_id)
+    with get_cursor() as cur:
+        cur.execute("SELECT file_id, filename, file_type, owner_id, updated_at FROM files WHERE file_id = %s;", (dst_file_id,))
+        row = cur.fetchone()
+    if row is None:
+        return 0
+    flt = Filter(must=[FieldCondition(key="file_id", match=MatchValue(value=src_file_id))])
+    points, offset = [], None
+    while True:
+        batch, offset = client.scroll(QDRANT_COLLECTION, scroll_filter=flt, limit=256, with_vectors=True, with_payload=True, offset=offset)
+        for p in batch:
+            payload = dict(p.payload)
+            payload.update(file_id=dst_file_id, filename=row["filename"], file_type=row["file_type"],
+                           owner_id=row["owner_id"], updated_at_ts=row["updated_at"].timestamp())
+            points.append(PointStruct(id=dst_file_id * 100000 + payload["chunk_id"], vector=p.vector, payload=payload))
+        if offset is None:
+            break
+    if points:
+        client.upsert(QDRANT_COLLECTION, points=points)
     return len(points)
 
 

@@ -5,3 +5,9 @@ __pycache__/
 .pytest_cache/
 qdrant_storage/
 documents/
+data/
+frontend/node_modules/
+frontend/dist/
+*.db
+*.db-wal
+*.db-shm
